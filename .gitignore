@@ -1,0 +1,42 @@
+# Node modules (si usas npm en el futuro)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build outputs (si usas build tools)
+dist/
+build/
+
+# Cache
+.cache/
+*.cache
+
+# Archivos personales del sistema
+*.lnk

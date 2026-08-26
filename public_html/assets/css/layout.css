@@ -1,0 +1,665 @@
+/**
+ * Layout - FORTIORI ABOGADOS S.A.S.
+ * Grid system, containers, spacing
+ */
+
+/* ============================================================================
+   CONTAINERS
+   ============================================================================ */
+
+.container {
+    width: 100%;
+    max-width: var(--content-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+}
+
+.container-narrow {
+    max-width: var(--content-narrow);
+}
+
+.container-wide {
+    max-width: var(--content-wide);
+}
+
+.container-full {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-left: var(--space-6);
+        padding-right: var(--space-6);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-left: var(--space-8);
+        padding-right: var(--space-8);
+    }
+}
+
+/* ============================================================================
+   SECTIONS
+   ============================================================================ */
+
+section {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+}
+
+.section-sm {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+}
+
+.section-lg {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+}
+
+.section-xl {
+    padding-top: var(--space-32);
+    padding-bottom: var(--space-32);
+}
+
+@media (max-width: 767px) {
+    section {
+        padding-top: var(--space-12);
+        padding-bottom: var(--space-12);
+    }
+
+    .section-lg {
+        padding-top: var(--space-16);
+        padding-bottom: var(--space-16);
+    }
+
+    .section-xl {
+        padding-top: var(--space-20);
+        padding-bottom: var(--space-20);
+    }
+}
+
+/* ============================================================================
+   GRID SYSTEM
+   ============================================================================ */
+
+.grid {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-cols-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.grid-cols-12 {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+/* Responsive grids */
+@media (max-width: 767px) {
+    .grid-cols-2,
+    .grid-cols-3,
+    .grid-cols-4,
+    .grid-cols-6,
+    .grid-cols-12 {
+        grid-template-columns: 1fr;
+    }
+
+    .md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .md\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .lg\:grid-cols-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* Grid gaps */
+.gap-0 {
+    gap: 0;
+}
+
+.gap-2 {
+    gap: var(--space-2);
+}
+
+.gap-4 {
+    gap: var(--space-4);
+}
+
+.gap-6 {
+    gap: var(--space-6);
+}
+
+.gap-8 {
+    gap: var(--space-8);
+}
+
+.gap-12 {
+    gap: var(--space-12);
+}
+
+/* Column span */
+.col-span-2 {
+    grid-column: span 2;
+}
+
+.col-span-3 {
+    grid-column: span 3;
+}
+
+.col-span-4 {
+    grid-column: span 4;
+}
+
+.col-span-6 {
+    grid-column: span 6;
+}
+
+.col-span-full {
+    grid-column: 1 / -1;
+}
+
+/* ============================================================================
+   FLEXBOX
+   ============================================================================ */
+
+.flex {
+    display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+/* Direction */
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-col-reverse {
+    flex-direction: column-reverse;
+}
+
+/* Wrap */
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+/* Justify */
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+/* Align items */
+.items-start {
+    align-items: flex-start;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-baseline {
+    align-items: baseline;
+}
+
+.items-stretch {
+    align-items: stretch;
+}
+
+/* Align self */
+.self-start {
+    align-self: flex-start;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.self-center {
+    align-self: center;
+}
+
+/* Gap */
+.flex-gap-2 {
+    gap: var(--space-2);
+}
+
+.flex-gap-4 {
+    gap: var(--space-4);
+}
+
+.flex-gap-6 {
+    gap: var(--space-6);
+}
+
+.flex-gap-8 {
+    gap: var(--space-8);
+}
+
+/* Grow/Shrink */
+.flex-1 {
+    flex: 1 1 0%;
+}
+
+.flex-auto {
+    flex: 1 1 auto;
+}
+
+.flex-initial {
+    flex: 0 1 auto;
+}
+
+.flex-none {
+    flex: none;
+}
+
+/* ============================================================================
+   SPACING UTILITIES
+   ============================================================================ */
+
+/* Margin */
+.m-0 {
+    margin: 0;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.my-4 {
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.my-6 {
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-6);
+}
+
+.my-8 {
+    margin-top: var(--space-8);
+    margin-bottom: var(--space-8);
+}
+
+.my-12 {
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-12);
+}
+
+.mt-4 {
+    margin-top: var(--space-4);
+}
+
+.mt-6 {
+    margin-top: var(--space-6);
+}
+
+.mt-8 {
+    margin-top: var(--space-8);
+}
+
+.mt-12 {
+    margin-top: var(--space-12);
+}
+
+.mb-4 {
+    margin-bottom: var(--space-4);
+}
+
+.mb-6 {
+    margin-bottom: var(--space-6);
+}
+
+.mb-8 {
+    margin-bottom: var(--space-8);
+}
+
+.mb-12 {
+    margin-bottom: var(--space-12);
+}
+
+/* Padding */
+.p-0 {
+    padding: 0;
+}
+
+.p-4 {
+    padding: var(--space-4);
+}
+
+.p-6 {
+    padding: var(--space-6);
+}
+
+.p-8 {
+    padding: var(--space-8);
+}
+
+.px-4 {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+}
+
+.px-6 {
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
+}
+
+.px-8 {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+}
+
+.py-4 {
+    padding-top: var(--space-4);
+    padding-bottom: var(--space-4);
+}
+
+.py-6 {
+    padding-top: var(--space-6);
+    padding-bottom: var(--space-6);
+}
+
+.py-8 {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+}
+
+.py-12 {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+}
+
+.py-16 {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+}
+
+/* ============================================================================
+   DISPLAY
+   ============================================================================ */
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.inline {
+    display: inline;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive display */
+@media (max-width: 767px) {
+    .md\:hidden {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .md\:block {
+        display: block;
+    }
+
+    .md\:flex {
+        display: flex;
+    }
+
+    .md\:grid {
+        display: grid;
+    }
+
+    .hidden-md {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .lg\:block {
+        display: block;
+    }
+
+    .lg\:flex {
+        display: flex;
+    }
+
+    .lg\:grid {
+        display: grid;
+    }
+
+    .hidden-lg {
+        display: none;
+    }
+}
+
+/* ============================================================================
+   POSITION
+   ============================================================================ */
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.sticky {
+    position: sticky;
+}
+
+/* ============================================================================
+   WIDTH & HEIGHT
+   ============================================================================ */
+
+.w-full {
+    width: 100%;
+}
+
+.w-auto {
+    width: auto;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.h-auto {
+    height: auto;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+/* ============================================================================
+   OVERFLOW
+   ============================================================================ */
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+/* ============================================================================
+   ASPECT RATIO
+   ============================================================================ */
+
+.aspect-video {
+    aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+    aspect-ratio: 1 / 1;
+}
+
+.aspect-4-3 {
+    aspect-ratio: 4 / 3;
+}
+
+/* ============================================================================
+   OBJECT FIT
+   ============================================================================ */
+
+.object-cover {
+    object-fit: cover;
+}
+
+.object-contain {
+    object-fit: contain;
+}
+
+.object-fill {
+    object-fit: fill;
+}
+
+/* ============================================================================
+   Z-INDEX
+   ============================================================================ */
+
+.z-0 {
+    z-index: 0;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.z-20 {
+    z-index: 20;
+}
+
+.z-30 {
+    z-index: 30;
+}
+
+.z-40 {
+    z-index: 40;
+}
+
+.z-50 {
+    z-index: 50;
+}
+
+.z-header {
+    z-index: var(--z-header);
+}
+
+.z-modal {
+    z-index: var(--z-modal);
+}
+
+.z-toast {
+    z-index: var(--z-toast);
+}

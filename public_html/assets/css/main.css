@@ -1,0 +1,119 @@
+/**
+ * Main CSS - FORTIORI ABOGADOS S.A.S.
+ * Import orden: variables → reset → base → components → utilities
+ */
+
+/* ============================================================================
+   FOUNDATION
+   ============================================================================ */
+
+@import url('variables.css');
+@import url('reset.css');
+@import url('typography.css');
+@import url('layout.css');
+
+/* ============================================================================
+   COMPONENTS
+   ============================================================================ */
+
+@import url('components.css');
+@import url('header-footer.css');
+@import url('home.css');
+@import url('ugpp.css');
+
+/* ============================================================================
+   UTILITIES
+   ============================================================================ */
+
+@import url('utilities.css');
+
+/* ============================================================================
+   CUSTOM STYLES
+   ============================================================================ */
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Body */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content */
+main {
+    flex: 1;
+}
+
+/* Selection */
+::selection {
+    background-color: var(--brand-red);
+    color: var(--brand-white);
+}
+
+::-moz-selection {
+    background-color: var(--brand-red);
+    color: var(--brand-white);
+}
+
+/* Focus visible */
+:focus-visible {
+    outline: 2px solid var(--brand-red);
+    outline-offset: 2px;
+}
+
+/* Scrollbar personalizado (opcional, solo webkit) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray-400);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-500);
+}
+
+/* Loading state */
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: -0.75rem;
+    margin-left: -0.75rem;
+    border: 2px solid var(--gray-200);
+    border-top-color: var(--brand-red);
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
