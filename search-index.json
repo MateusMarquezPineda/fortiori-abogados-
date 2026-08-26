@@ -1,0 +1,66 @@
+{
+  "articles": [
+    {
+      "title": "Cómo Responder un Requerimiento de la UGPP: Guía Paso a Paso",
+      "slug": "como-responder-requerimiento-ugpp",
+      "url": "/como-responder-requerimiento-ugpp/",
+      "excerpt": "Aprende a responder correctamente un requerimiento de la UGPP para evitar sanciones. Guía completa con plazos, documentos y estrategias de defensa efectivas.",
+      "category": "ugpp",
+      "categoryLabel": "UGPP",
+      "date": "2026-08-20",
+      "dateFormatted": "20 Ago 2026"
+    },
+    {
+      "title": "Depuración de Semanas Cotizadas: Recupera tus Derechos Pensionales",
+      "slug": "depuracion-semanas-cotizadas-colpensiones",
+      "url": "/depuracion-semanas-cotizadas-colpensiones/",
+      "excerpt": "Descubre cómo identificar y corregir errores en tu historial laboral que pueden estar impidiendo tu pensión. Casos reales de éxito y procedimientos paso a paso.",
+      "category": "colpensiones",
+      "categoryLabel": "Colpensiones",
+      "date": "2026-08-15",
+      "dateFormatted": "15 Ago 2026"
+    },
+    {
+      "title": "Cumplimiento Normativo para Empresas en 2026: Nuevas Obligaciones",
+      "slug": "cumplimiento-normativo-empresas-2026",
+      "url": "/cumplimiento-normativo-empresas-2026/",
+      "excerpt": "Guía completa sobre las nuevas obligaciones legales que tu empresa debe cumplir este año. Evita sanciones y mantén tu negocio protegido ante cambios normativos.",
+      "category": "empresarial",
+      "categoryLabel": "Empresarial",
+      "date": "2026-08-10",
+      "dateFormatted": "10 Ago 2026"
+    },
+    {
+      "title": "Liquidación de Nómina 2026: Errores Comunes que Debes Evitar",
+      "slug": "liquidacion-nomina-2026",
+      "url": "/liquidacion-nomina-2026/",
+      "excerpt": "Descubre los errores más frecuentes en la liquidación de nómina que pueden generar sanciones por parte de la UGPP. Checklist de cumplimiento incluido.",
+      "category": "laboral",
+      "categoryLabel": "Laboral",
+      "date": "2026-08-05",
+      "dateFormatted": "5 Ago 2026"
+    },
+    {
+      "title": "Defensa Efectiva ante Sanciones de la UGPP: Lo que Debes Saber",
+      "slug": "defensa-ante-sanciones-ugpp",
+      "url": "/defensa-ante-sanciones-ugpp/",
+      "excerpt": "Estrategias jurídicas probadas para defenderte de sanciones impuestas por la UGPP. Conoce tus derechos y los recursos legales disponibles.",
+      "category": "ugpp",
+      "categoryLabel": "UGPP",
+      "date": "2026-08-01",
+      "dateFormatted": "1 Ago 2026"
+    },
+    {
+      "title": "Casos de Éxito: Cómo Logramos el Reconocimiento Pensional",
+      "slug": "casos-exito-colpensiones",
+      "url": "/casos-exito-colpensiones/",
+      "excerpt": "Casos reales donde recuperamos semanas cotizadas y logramos el reconocimiento pensional. Aprende de experiencias exitosas y aplícalas a tu caso.",
+      "category": "colpensiones",
+      "categoryLabel": "Colpensiones",
+      "date": "2026-07-25",
+      "dateFormatted": "25 Jul 2026"
+    }
+  ],
+  "lastUpdated": "2026-08-20T00:00:00Z",
+  "totalArticles": 6
+}

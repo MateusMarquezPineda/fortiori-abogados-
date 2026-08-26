@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>FORTIORI ABOGADOS - Blog Jurídico</title>
+        <link>https://fortioriabogados.com/</link>
+        <description>Artículos sobre fiscalización UGPP, depuración Colpensiones, derecho empresarial y laboral</description>
+        <language>es-CO</language>
+        <lastBuildDate>Tue, 20 Aug 2026 00:00:00 GMT</lastBuildDate>
+        <atom:link href="https://fortioriabogados.com/feed.xml" rel="self" type="application/rss+xml"/>
+
+        <!-- Article 1 -->
+        <item>
+            <title>Cómo Responder un Requerimiento de la UGPP: Guía Paso a Paso</title>
+            <link>https://fortioriabogados.com/como-responder-requerimiento-ugpp/</link>
+            <guid isPermaLink="true">https://fortioriabogados.com/como-responder-requerimiento-ugpp/</guid>
+            <description>Aprende a responder correctamente un requerimiento de la UGPP para evitar sanciones. Guía completa con plazos, documentos y estrategias de defensa efectivas.</description>
+            <category>UGPP</category>
+            <pubDate>Tue, 20 Aug 2026 00:00:00 GMT</pubDate>
+        </item>
+
+        <!-- Article 2 -->
+        <item>
+            <title>Depuración de Semanas Cotizadas: Recupera tus Derechos Pensionales</title>
+            <link>https://fortioriabogados.com/depuracion-semanas-cotizadas-colpensiones/</link>
+            <guid isPermaLink="true">https://fortioriabogados.com/depuracion-semanas-cotizadas-colpensiones/</guid>
+            <description>Descubre cómo identificar y corregir errores en tu historial laboral que pueden estar impidiendo tu pensión. Casos reales de éxito y procedimientos paso a paso.</description>
+            <category>Colpensiones</category>
+            <pubDate>Fri, 15 Aug 2026 00:00:00 GMT</pubDate>
+        </item>
+
+        <!-- Article 3 -->
+        <item>
+            <title>Cumplimiento Normativo para Empresas en 2026: Nuevas Obligaciones</title>
+            <link>https://fortioriabogados.com/cumplimiento-normativo-empresas-2026/</link>
+            <guid isPermaLink="true">https://fortioriabogados.com/cumplimiento-normativo-empresas-2026/</guid>
+            <description>Guía completa sobre las nuevas obligaciones legales que tu empresa debe cumplir este año. Evita sanciones y mantén tu negocio protegido ante cambios normativos.</description>
+            <category>Empresarial</category>
+            <pubDate>Sun, 10 Aug 2026 00:00:00 GMT</pubDate>
+        </item>
+
+        <!-- Article 4 -->
+        <item>
+            <title>Liquidación de Nómina 2026: Errores Comunes que Debes Evitar</title>
+            <link>https://fortioriabogados.com/liquidacion-nomina-2026/</link>
+            <guid isPermaLink="true">https://fortioriabogados.com/liquidacion-nomina-2026/</guid>
+            <description>Descubre los errores más frecuentes en la liquidación de nómina que pueden generar sanciones por parte de la UGPP. Checklist de cumplimiento incluido.</description>
+            <category>Laboral</category>
+            <pubDate>Tue, 05 Aug 2026 00:00:00 GMT</pubDate>
+        </item>
+
+        <!-- Article 5 -->
+        <item>
+            <title>Defensa Efectiva ante Sanciones de la UGPP: Lo que Debes Saber</title>
+            <link>https://fortioriabogados.com/defensa-ante-sanciones-ugpp/</link>
+            <guid isPermaLink="true">https://fortioriabogados.com/defensa-ante-sanciones-ugpp/</guid>
+            <description>Estrategias jurídicas probadas para defenderte de sanciones impuestas por la UGPP. Conoce tus derechos y los recursos legales disponibles.</description>
+            <category>UGPP</category>
+            <pubDate>Fri, 01 Aug 2026 00:00:00 GMT</pubDate>
+        </item>
+
+        <!-- Article 6 -->
+        <item>
+            <title>Casos de Éxito: Cómo Logramos el Reconocimiento Pensional</title>
+            <link>https://fortioriabogados.com/casos-exito-colpensiones/</link>
+            <guid isPermaLink="true">https://fortioriabogados.com/casos-exito-colpensiones/</guid>
+            <description>Casos reales donde recuperamos semanas cotizadas y logramos el reconocimiento pensional. Aprende de experiencias exitosas y aplícalas a tu caso.</description>
+            <category>Colpensiones</category>
+            <pubDate>Fri, 25 Jul 2026 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
