@@ -3,20 +3,20 @@
     <div class="container">
         <div class="navbar-content">
             <!-- Logo -->
-            <a href="/" class="navbar-logo" aria-label="FORTIORI ABOGADOS - Ir al inicio">
+            <a href="./" class="navbar-logo" aria-label="FORTIORI ABOGADOS - Ir al inicio">
                 <img src="assets/images/logo-fortiori.svg" alt="FORTIORI ABOGADOS" class="logo-img">
             </a>
 
             <!-- Desktop Navigation -->
             <ul class="navbar-menu" id="navbar-menu">
                 <li class="navbar-item">
-                    <a href="/" class="navbar-link">Inicio</a>
+                    <a href="./" class="navbar-link">Inicio</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="/ugpp/" class="navbar-link">Fiscalización UGPP</a>
+                    <a href="ugpp/" class="navbar-link">Fiscalización UGPP</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="/depuracion-de-deuda-real-y-presunta-de-colpensiones/" class="navbar-link">Depuración Colpensiones</a>
+                    <a href="depuracion-de-deuda-real-y-presunta-de-colpensiones/" class="navbar-link">Depuración Colpensiones</a>
                 </li>
                 <li class="navbar-item navbar-item-dropdown">
                     <button class="navbar-link navbar-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
@@ -26,20 +26,20 @@
                         </svg>
                     </button>
                     <ul class="navbar-dropdown">
-                        <li><a href="/la-empresa-y-el-empresario/" class="navbar-dropdown-link">La Empresa y el Empresario</a></li>
-                        <li><a href="/derecho-laboral-y-seguridad-social/" class="navbar-dropdown-link">Derecho Laboral y Seguridad Social</a></li>
+                        <li><a href="la-empresa-y-el-empresario/" class="navbar-dropdown-link">La Empresa y el Empresario</a></li>
+                        <li><a href="derecho-laboral-y-seguridad-social/" class="navbar-dropdown-link">Derecho Laboral y Seguridad Social</a></li>
                     </ul>
                 </li>
                 <li class="navbar-item">
-                    <a href="/blog/" class="navbar-link">Blog</a>
+                    <a href="blog/" class="navbar-link">Blog</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="/contacto/" class="navbar-link">Contacto</a>
+                    <a href="contacto/" class="navbar-link">Contacto</a>
                 </li>
             </ul>
 
             <!-- CTA Button -->
-            <a href="/contacto/" class="navbar-cta btn btn-primary">
+            <a href="contacto/" class="navbar-cta btn btn-primary">
                 Consulta Gratis
             </a>
 
