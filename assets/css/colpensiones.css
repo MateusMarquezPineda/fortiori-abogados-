@@ -972,7 +972,7 @@
     padding: var(--space-20) 0;
     background:
         linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%),
-        url('/assets/images/Fondo 3 .svg') center center / cover no-repeat;
+        url('/assets/images/fondo-3.svg') center center / cover no-repeat;
     color: var(--brand-white);
     position: relative;
     overflow: hidden;
