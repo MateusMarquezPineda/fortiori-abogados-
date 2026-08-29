@@ -533,31 +533,31 @@
 .mosaic-tile-institutional .mosaic-tile-bg {
     background:
         linear-gradient(135deg, rgba(26, 26, 26, 0.15) 0%, rgba(45, 45, 45, 0.25) 100%),
-        url('/assets/images/Servicios .svg') center center / cover no-repeat;
+        url('/assets/images/servicios.svg') center center / cover no-repeat;
 }
 
 .mosaic-tile-ugpp .mosaic-tile-bg {
     background:
         linear-gradient(135deg, rgba(26, 26, 26, 0.15) 0%, rgba(45, 45, 45, 0.25) 100%),
-        url('/assets/images/ServicioFiscalizaciones de la UGPP.svg') center center / cover no-repeat;
+        url('/assets/images/servicio-fiscalizaciones-ugpp.svg') center center / cover no-repeat;
 }
 
 .mosaic-tile-colpensiones .mosaic-tile-bg {
     background:
         linear-gradient(135deg, rgba(26, 26, 26, 0.4) 0%, rgba(45, 45, 45, 0.5) 100%),
-        url('/assets/images/Servicio Pensión en Colpensiones.svg') center center / cover no-repeat;
+        url('/assets/images/servicio-pension-colpensiones.svg') center center / cover no-repeat;
 }
 
 .mosaic-tile-empresa .mosaic-tile-bg {
     background:
         linear-gradient(135deg, rgba(26, 26, 26, 0.15) 0%, rgba(45, 45, 45, 0.25) 100%),
-        url('/assets/images/Servicio Asesoría Legal Especializada .svg') center center / cover no-repeat;
+        url('/assets/images/servicio-asesoria-legal.svg') center center / cover no-repeat;
 }
 
 .mosaic-tile-laboral .mosaic-tile-bg {
     background:
         linear-gradient(135deg, rgba(26, 26, 26, 0.15) 0%, rgba(45, 45, 45, 0.25) 100%),
-        url('/assets/images/Servicio Derecho Laboral.svg') center center / cover no-repeat;
+        url('/assets/images/servicio-derecho-laboral.svg') center center / cover no-repeat;
 }
 
 /* Accessibility improvements */
