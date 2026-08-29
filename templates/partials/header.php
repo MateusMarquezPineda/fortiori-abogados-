@@ -28,16 +28,16 @@
     <meta name="twitter:image" content="<?= $og_image ?? 'https://fortioriabogados.com/assets/images/og-default.jpg' ?>">
 
     <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
 
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 
     <!-- Additional Head Content -->
     <?php if (isset($additional_head)): ?>

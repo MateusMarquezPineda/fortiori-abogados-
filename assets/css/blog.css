@@ -564,7 +564,7 @@
 .article-cta {
     background:
         linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%),
-        url('/assets/images/fondo-3.webp') center center / cover no-repeat;
+        url('../images/fondo-3.webp') center center / cover no-repeat;
     padding: 2.5rem;
     border-radius: 12px;
     text-align: center;

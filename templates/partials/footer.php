@@ -6,7 +6,7 @@
                     <!-- Column 1: About -->
                     <div class="footer-column">
                         <div class="footer-logo">
-                            <img src="/assets/images/logo-fortiori.svg" alt="FORTIORI ABOGADOS" class="logo-img">
+                            <img src="assets/images/logo-fortiori.svg" alt="FORTIORI ABOGADOS" class="logo-img">
                         </div>
                         <p class="footer-description">
                             Firma de abogados especializada en fiscalización UGPP, depuración de deudas con Colpensiones, derecho empresarial y derecho laboral.
@@ -93,8 +93,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/navigation.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/navigation.js"></script>
 
     <!-- Additional Scripts -->
     <?php if (isset($additional_scripts)): ?>
