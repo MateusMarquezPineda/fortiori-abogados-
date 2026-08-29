@@ -4,10 +4,7 @@
         <div class="navbar-content">
             <!-- Logo -->
             <a href="/" class="navbar-logo" aria-label="FORTIORI ABOGADOS - Ir al inicio">
-                <div class="logo">
-                    <span class="logo-text">FORTIORI</span>
-                    <span class="logo-subtitle">ABOGADOS</span>
-                </div>
+                <img src="/assets/images/Fortiori.svg" alt="FORTIORI ABOGADOS" class="logo-img">
             </a>
 
             <!-- Desktop Navigation -->

@@ -997,7 +997,9 @@
 
 .ugpp-cta {
     padding: var(--space-20) 0;
-    background: linear-gradient(135deg, var(--brand-black) 0%, #1a1a1a 100%);
+    background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%),
+        url('/assets/images/Fondo 3 .svg') center center / cover no-repeat;
     color: var(--brand-white);
     position: relative;
     overflow: hidden;
@@ -1027,6 +1029,7 @@
     font-weight: var(--font-black);
     margin-bottom: var(--space-4);
     line-height: var(--leading-tight);
+    color: var(--brand-red);
 }
 
 .ugpp-cta h2 .highlight {

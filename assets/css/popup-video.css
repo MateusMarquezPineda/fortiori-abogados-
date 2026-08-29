@@ -1,0 +1,180 @@
+/**
+ * Video Popup - FORTIORI ABOGADOS S.A.S.
+ * Modal emergente para video de YouTube
+ */
+
+/* Overlay del popup */
+.video-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.video-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Contenedor del popup */
+.video-popup-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--brand-black);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.video-popup-overlay.active .video-popup-container {
+    transform: scale(1);
+    animation: popupBounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes popupBounce {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Botón de cerrar */
+.video-popup-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 44px;
+    height: 44px;
+    background-color: var(--brand-red);
+    color: var(--brand-white);
+    border: 3px solid var(--brand-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.video-popup-close:hover {
+    background-color: var(--red-dark);
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.video-popup-close:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+/* Header del popup */
+.video-popup-header {
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
+    padding: var(--space-4) var(--space-6);
+    text-align: center;
+}
+
+.video-popup-title {
+    color: var(--brand-white);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.video-popup-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--text-sm);
+    margin: var(--space-2) 0 0;
+}
+
+/* Contenedor del video */
+.video-popup-content {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    background-color: #000;
+}
+
+.video-popup-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Footer opcional */
+.video-popup-footer {
+    background-color: var(--brand-black);
+    padding: var(--space-4) var(--space-6);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-popup-footer p {
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .video-popup-container {
+        max-width: 100%;
+        margin: var(--space-4);
+        border-radius: var(--radius-lg);
+    }
+
+    .video-popup-close {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+        top: -10px;
+        right: -10px;
+    }
+
+    .video-popup-title {
+        font-size: var(--text-lg);
+    }
+
+    .video-popup-header {
+        padding: var(--space-3) var(--space-4);
+    }
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

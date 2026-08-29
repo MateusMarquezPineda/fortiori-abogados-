@@ -21,6 +21,7 @@
 @import url('home.css');
 @import url('ugpp.css');
 @import url('colpensiones.css');
+@import url('popup-video.css');
 
 /* ============================================================================
    UTILITIES
@@ -48,6 +49,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 /* Main content */

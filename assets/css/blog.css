@@ -562,7 +562,9 @@
 }
 
 .article-cta {
-    background: linear-gradient(135deg, var(--brand-red) 0%, #8B0000 100%);
+    background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%),
+        url('/assets/images/Fondo 3 .svg') center center / cover no-repeat;
     padding: 2.5rem;
     border-radius: 12px;
     text-align: center;
@@ -573,6 +575,7 @@
     font-size: 1.75rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    color: var(--brand-red);
 }
 
 .article-cta p {

@@ -66,10 +66,7 @@
                 <div class="navbar-content">
                     <!-- Logo -->
                     <a href="../" class="navbar-logo" aria-label="FORTIORI ABOGADOS - Ir al inicio">
-                        <div class="logo">
-                            <span class="logo-text">FORTIORI</span>
-                            <span class="logo-subtitle">ABOGADOS</span>
-                        </div>
+                        <img src="/assets/images/Logo-Fortiori.svg" alt="FORTIORI ABOGADOS" class="logo-img">
                     </a>
 
                     <!-- Desktop Navigation -->
@@ -94,20 +91,18 @@
                         </li>
                     </ul>
 
-                    <!-- CTA Button -->
-                    <a href="../contacto/" class="navbar-cta btn btn-primary">
-                        Consulta Gratis
-                    </a>
-
-                    <!-- Mobile Toggle -->
-                    <button class="navbar-toggle" id="navbar-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navbar-menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <!-- Mobile Menu Toggle -->
+                    <button class="navbar-toggle" id="navbar-toggle" aria-expanded="false" aria-controls="navbar-menu" aria-label="Abrir menú de navegación">
+                        <span class="navbar-toggle-icon"></span>
+                        <span class="navbar-toggle-icon"></span>
+                        <span class="navbar-toggle-icon"></span>
                     </button>
                 </div>
             </div>
         </nav>
+
+        <!-- Mobile Overlay -->
+        <div class="navbar-overlay" id="navbar-overlay" aria-hidden="true"></div>
     </header>
 
     <!-- Main Content -->
@@ -455,8 +450,7 @@
                     <!-- Column 1: About -->
                     <div class="footer-column">
                         <div class="footer-logo">
-                            <span class="logo-text">FORTIORI</span>
-                            <span class="logo-subtitle">ABOGADOS</span>
+                            <img src="/assets/images/Logo en Blanco.svg" alt="FORTIORI ABOGADOS" class="logo-img">
                         </div>
                         <p class="footer-description">
                             Firma de abogados especializada en fiscalización UGPP, depuración de deudas con Colpensiones, derecho empresarial y derecho laboral.
@@ -482,7 +476,7 @@
                             <li><a href="../ugpp/" class="footer-link">Fiscalización UGPP</a></li>
                             <li><a href="../depuracion-de-deuda-real-y-presunta-de-colpensiones/" class="footer-link">Depuración Colpensiones</a></li>
                             <li><a href="../derecho-empresarial/" class="footer-link">Derecho Empresarial</a></li>
-                            <li><a href="./" class="footer-link">Blog Jurídico</a></li>
+                            <li><a href="../blog/" class="footer-link">Blog Jurídico</a></li>
                             <li><a href="../contacto/" class="footer-link">Contacto</a></li>
                         </ul>
                     </div>
@@ -528,7 +522,16 @@
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2026 FORTIORI ABOGADOS S.A.S. Todos los derechos reservados.</p>
+                <div class="footer-bottom-content">
+                    <p class="footer-copyright">
+                        &copy; 2026 FORTIORI ABOGADOS S.A.S. - NIT 901.013.525-1. Todos los derechos reservados.
+                    </p>
+                    <div class="footer-legal">
+                        <a href="../politicas-de-privacidad/" class="footer-legal-link">Política de Privacidad</a>
+                        <span class="footer-separator">|</span>
+                        <a href="../terminos-y-condiciones/" class="footer-legal-link">Términos y Condiciones</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

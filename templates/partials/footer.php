@@ -6,8 +6,7 @@
                     <!-- Column 1: About -->
                     <div class="footer-column">
                         <div class="footer-logo">
-                            <span class="logo-text">FORTIORI</span>
-                            <span class="logo-subtitle">ABOGADOS</span>
+                            <img src="/assets/images/Fortiori.svg" alt="FORTIORI ABOGADOS" class="logo-img">
                         </div>
                         <p class="footer-description">
                             Firma de abogados especializada en fiscalización UGPP, depuración de deudas con Colpensiones, derecho empresarial y derecho laboral.
