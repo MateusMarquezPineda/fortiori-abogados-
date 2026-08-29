@@ -20,10 +20,11 @@ function initMobileMenu() {
     const toggle = document.getElementById('navbar-toggle');
     const menu = document.getElementById('navbar-menu');
     const overlay = document.getElementById('navbar-overlay');
+    const closeBtn = document.getElementById('navbar-close');
 
     if (!toggle || !menu || !overlay) return;
 
-    // Toggle menú
+    // Abrir menú
     toggle.addEventListener('click', function() {
         const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
 
@@ -34,12 +35,17 @@ function initMobileMenu() {
         }
     });
 
+    // Cerrar con botón X
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeMenu);
+    }
+
     // Cerrar con overlay
     overlay.addEventListener('click', closeMenu);
 
     // Cerrar con ESC
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
+        if (e.key === 'Escape' && menu.classList.contains('active')) {
             closeMenu();
         }
     });
@@ -49,7 +55,10 @@ function initMobileMenu() {
         menu.classList.add('active');
         overlay.classList.add('active');
         overlay.setAttribute('aria-hidden', 'false');
+
+        // Body scroll lock
         document.body.style.overflow = 'hidden';
+        document.body.style.touchAction = 'none';
     }
 
     function closeMenu() {
@@ -57,18 +66,24 @@ function initMobileMenu() {
         menu.classList.remove('active');
         overlay.classList.remove('active');
         overlay.setAttribute('aria-hidden', 'true');
+
+        // Restore body scroll
         document.body.style.overflow = '';
+        document.body.style.touchAction = '';
     }
 
     // Cerrar al hacer click en link (mobile)
-    const menuLinks = menu.querySelectorAll('.navbar-link');
+    const menuLinks = menu.querySelectorAll('.navbar-link:not(.navbar-dropdown-toggle)');
     menuLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Solo cerrar si no es un dropdown toggle
-            if (!this.classList.contains('navbar-dropdown-toggle')) {
-                closeMenu();
-            }
+        link.addEventListener('click', function() {
+            closeMenu();
         });
+    });
+
+    // Cerrar al hacer click en dropdown link
+    const dropdownLinks = menu.querySelectorAll('.navbar-dropdown-link');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
     });
 }
 
