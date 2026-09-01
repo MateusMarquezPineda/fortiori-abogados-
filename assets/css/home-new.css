@@ -1,0 +1,489 @@
+/* ================================
+   NEW HOME PAGE STYLES
+   ================================ */
+
+/* Services Section */
+.services-section {
+    padding: var(--space-20) 0;
+    background-color: var(--brand-white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+}
+
+.service-card {
+    background-color: var(--gray-50);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--brand-red);
+    box-shadow: var(--shadow-xl);
+}
+
+.service-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+}
+
+.service-icon svg {
+    color: var(--brand-white);
+}
+
+.service-card h3 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--brand-black);
+    margin-bottom: var(--space-3);
+}
+
+.service-card p {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+}
+
+.service-concepts {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-6) 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+
+.service-concepts li {
+    font-size: var(--text-sm);
+    color: var(--brand-red);
+    background-color: var(--brand-white);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-medium);
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--brand-red);
+    text-decoration: none;
+    transition: gap 0.2s ease;
+}
+
+.service-link:hover {
+    gap: var(--space-3);
+}
+
+.service-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Problems Section */
+.problems-section {
+    padding: var(--space-20) 0;
+    background-color: var(--gray-50);
+}
+
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+    margin-top: var(--space-12);
+}
+
+.problem-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background-color: var(--brand-white);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--brand-red);
+    transition: all 0.2s ease;
+}
+
+.problem-item:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-md);
+}
+
+.problem-item svg {
+    color: var(--brand-red);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.problem-item span {
+    font-size: var(--text-base);
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+.problems-cta {
+    text-align: center;
+    margin-top: var(--space-12);
+}
+
+/* Differential Section */
+.differential-section {
+    padding: var(--space-20) 0;
+    background-color: var(--brand-white);
+}
+
+.differential-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+}
+
+.differential-item {
+    text-align: center;
+    padding: var(--space-6);
+}
+
+.differential-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--gray-100);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+    transition: all 0.3s ease;
+}
+
+.differential-item:hover .differential-icon {
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
+}
+
+.differential-item:hover .differential-icon svg {
+    color: var(--brand-white);
+}
+
+.differential-icon svg {
+    color: var(--brand-red);
+    transition: color 0.3s ease;
+}
+
+.differential-item h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--brand-black);
+    margin-bottom: var(--space-2);
+}
+
+.differential-item p {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Methodology Section */
+.methodology-section {
+    padding: var(--space-20) 0;
+    background-color: var(--gray-50);
+}
+
+.methodology-flow {
+    max-width: 600px;
+    margin: var(--space-12) auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.methodology-step {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.methodology-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
+    color: var(--brand-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    margin: 0 auto var(--space-3);
+}
+
+.methodology-step h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--brand-black);
+    margin-bottom: var(--space-2);
+}
+
+.methodology-step p {
+    font-size: var(--text-base);
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.methodology-arrow {
+    margin: var(--space-4) 0;
+    color: var(--brand-red);
+}
+
+.methodology-arrow svg {
+    opacity: 0.4;
+}
+
+/* Prevention Section */
+.prevention-section {
+    padding: var(--space-20) 0;
+    background: linear-gradient(135deg, var(--brand-black) 0%, #1a1a1a 100%);
+    color: var(--brand-white);
+}
+
+.prevention-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.prevention-content h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: var(--font-bold);
+    color: var(--brand-white);
+    margin-bottom: var(--space-6);
+    line-height: 1.2;
+}
+
+.prevention-content p {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-8);
+}
+
+/* Services Showcase Section */
+.services-showcase {
+    padding: var(--space-20) 0;
+    background: linear-gradient(180deg, var(--brand-white) 0%, var(--gray-50) 100%);
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-12);
+}
+
+.showcase-card {
+    position: relative;
+    min-height: 400px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-lg);
+}
+
+.showcase-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2xl);
+}
+
+.showcase-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease;
+}
+
+.showcase-card:hover .showcase-card-bg {
+    transform: scale(1.05);
+}
+
+.showcase-card-ugpp .showcase-card-bg {
+    background-image: url('../images/servicio-fiscalizaciones-ugpp.webp');
+}
+
+.showcase-card-colpensiones .showcase-card-bg {
+    background-image: url('../images/servicio-pension-colpensiones.webp');
+}
+
+.showcase-card-empresa .showcase-card-bg {
+    background-image: url('../images/servicio-asesoria-legal.webp');
+}
+
+.showcase-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.6) 50%,
+        rgba(0, 0, 0, 0.9) 100%
+    );
+    transition: background 0.3s ease;
+}
+
+.showcase-card:hover .showcase-card-overlay {
+    background: linear-gradient(
+        to bottom,
+        rgba(179, 0, 27, 0.4) 0%,
+        rgba(179, 0, 27, 0.7) 50%,
+        rgba(0, 0, 0, 0.95) 100%
+    );
+}
+
+.showcase-card-content {
+    position: relative;
+    z-index: 2;
+    padding: var(--space-8);
+    color: var(--brand-white);
+}
+
+.showcase-card-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+    transition: all 0.3s ease;
+}
+
+.showcase-card:hover .showcase-card-icon {
+    background: var(--brand-red);
+    transform: scale(1.1);
+}
+
+.showcase-card-icon svg {
+    color: var(--brand-white);
+}
+
+.showcase-card-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--brand-white);
+    margin-bottom: var(--space-3);
+    line-height: 1.2;
+}
+
+.showcase-card-description {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-4);
+}
+
+.showcase-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    color: var(--brand-white);
+    transition: gap 0.2s ease;
+}
+
+.showcase-card:hover .showcase-card-link {
+    gap: var(--space-3);
+}
+
+.showcase-card-link svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive Mobile */
+@media (max-width: 767px) {
+    .services-section,
+    .problems-section,
+    .differential-section,
+    .methodology-section,
+    .prevention-section {
+        padding: var(--space-12) 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        margin-top: var(--space-8);
+    }
+
+    .problems-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+        margin-top: var(--space-8);
+    }
+
+    .differential-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        margin-top: var(--space-8);
+    }
+
+    .methodology-flow {
+        margin-top: var(--space-8);
+    }
+
+    .methodology-number {
+        width: 50px;
+        height: 50px;
+        font-size: var(--text-xl);
+    }
+
+    .prevention-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .prevention-content p {
+        font-size: var(--text-base);
+    }
+
+    .services-showcase {
+        padding: var(--space-12) 0;
+    }
+
+    .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        margin-top: var(--space-8);
+    }
+
+    .showcase-card {
+        min-height: 350px;
+    }
+}
