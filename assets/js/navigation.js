@@ -22,15 +22,23 @@ function initMobileMenu() {
     const overlay = document.getElementById('navbar-overlay');
     const closeBtn = document.getElementById('navbar-close');
 
-    if (!toggle || !menu || !overlay) return;
+    console.log('Mobile Menu Elements:', { toggle, menu, overlay, closeBtn });
+
+    if (!toggle || !menu || !overlay) {
+        console.error('Mobile menu elements not found!');
+        return;
+    }
 
     // Abrir menú
-    toggle.addEventListener('click', function() {
+    toggle.addEventListener('click', function(e) {
+        console.log('Toggle clicked!');
         const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
 
         if (isExpanded) {
+            console.log('Closing menu...');
             closeMenu();
         } else {
+            console.log('Opening menu...');
             openMenu();
         }
     });
@@ -51,10 +59,14 @@ function initMobileMenu() {
     });
 
     function openMenu() {
+        console.log('openMenu() called');
         toggle.setAttribute('aria-expanded', 'true');
         menu.classList.add('active');
         overlay.classList.add('active');
         overlay.setAttribute('aria-hidden', 'false');
+
+        console.log('Menu classes:', menu.className);
+        console.log('Overlay classes:', overlay.className);
 
         // Body scroll lock
         document.body.style.overflow = 'hidden';

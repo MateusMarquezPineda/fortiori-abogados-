@@ -1,0 +1,258 @@
+/**
+ * MOBILE MENU OFF-CANVAS - FORTIORI ABOGADOS
+ * Sistema de menú lateral para móviles - Arquitectura limpia
+ * Z-index strategy: 9998 (backdrop) / 9999 (menu panel)
+ */
+
+/* ============================================================================
+   MOBILE TOGGLE BUTTON (Hamburger)
+   ============================================================================ */
+
+.mobile-menu-toggle {
+    display: none; /* Oculto por defecto, visible solo en mobile */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+}
+
+.mobile-menu-toggle-bar {
+    width: 24px;
+    height: 2px;
+    background-color: #1a1a1a;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle-bar:nth-child(1) {
+    margin-bottom: 5px;
+}
+
+.mobile-menu-toggle-bar:nth-child(2) {
+    margin-bottom: 5px;
+}
+
+/* ============================================================================
+   BACKDROP (Overlay oscuro)
+   ============================================================================ */
+
+.mobile-menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9998;
+    pointer-events: none;
+}
+
+.mobile-menu-backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* ============================================================================
+   SIDEBAR PANEL (Menú lateral)
+   ============================================================================ */
+
+.mobile-menu-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85vw;
+    max-width: 360px;
+    height: 100vh;
+    height: 100dvh;
+    background-color: #f5f5f5;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-menu-sidebar.is-open {
+    transform: translateX(0);
+}
+
+/* ============================================================================
+   HEADER DEL MENÚ (Logo + Botón cerrar)
+   ============================================================================ */
+
+.mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    min-height: 64px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.mobile-menu-logo {
+    display: block;
+    max-width: 160px;
+    height: auto;
+}
+
+.mobile-menu-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 40px;
+    object-fit: contain;
+}
+
+.mobile-menu-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.mobile-menu-close:hover,
+.mobile-menu-close:active {
+    background-color: #e8e8e8;
+}
+
+.mobile-menu-close svg {
+    width: 24px;
+    height: 24px;
+    stroke: #1a1a1a;
+    stroke-width: 2;
+}
+
+/* ============================================================================
+   NAVIGATION LINKS
+   ============================================================================ */
+
+.mobile-menu-nav {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mobile-menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    pointer-events: auto; /* CRÍTICO: Asegurar que los enlaces sean clickeables */
+}
+
+.mobile-menu-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.mobile-menu-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu-link {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2a2a2a;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    pointer-events: auto; /* CRÍTICO: Permitir navegación */
+    background-color: transparent;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:active {
+    background-color: #ffffff;
+    color: #c41e3a;
+}
+
+.mobile-menu-link.active {
+    color: #c41e3a;
+    font-weight: 600;
+    background-color: #ffffff;
+}
+
+/* ============================================================================
+   RESPONSIVE - Mostrar solo en mobile
+   ============================================================================ */
+
+@media (max-width: 1023px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* En desktop, ocultar todo el sistema de menú móvil */
+    .mobile-menu-toggle,
+    .mobile-menu-backdrop,
+    .mobile-menu-sidebar {
+        display: none !important;
+    }
+}
+
+/* ============================================================================
+   HIDE FLOATING WIDGETS WHEN MENU IS OPEN
+   ============================================================================ */
+
+body.mobile-menu-open .whatsapp-float,
+body.mobile-menu-open .quick-chat {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Prevenir scroll del body cuando el menú está abierto */
+body.mobile-menu-open {
+    overflow: hidden;
+    touch-action: none;
+}
+
+/* ============================================================================
+   ACCESSIBILITY
+   ============================================================================ */
+
+.mobile-menu-close:focus,
+.mobile-menu-link:focus,
+.mobile-menu-toggle:focus {
+    outline: 2px solid #c41e3a;
+    outline-offset: 2px;
+}
+
+/* ============================================================================
+   SAFE AREA (iOS notch support)
+   ============================================================================ */
+
+@supports (padding: max(0px)) {
+    .mobile-menu-header {
+        padding-top: max(16px, env(safe-area-inset-top));
+    }
+
+    .mobile-menu-sidebar {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}

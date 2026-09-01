@@ -10,7 +10,7 @@
             <!-- Desktop Navigation -->
             <ul class="navbar-menu" id="navbar-menu">
                 <!-- Mobile Menu Header -->
-                <div class="navbar-menu-header">
+                <li class="navbar-menu-header">
                     <a href="./" class="navbar-menu-logo">
                         <img src="assets/images/logo-fortiori.svg" alt="FORTIORI ABOGADOS">
                     </a>
@@ -20,7 +20,7 @@
                             <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
                     </button>
-                </div>
+                </li>
 
                 <!-- Navigation Links -->
                 <li class="navbar-item">
