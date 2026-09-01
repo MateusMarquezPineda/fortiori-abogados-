@@ -94,9 +94,48 @@ const breadcrumbSchema = `
     }
     </script>`;
 
+// Generate FAQPage Schema
+const faqPageSchema = `
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "¿Mi empresa realmente debe todo lo que dice Colpensiones o la UGPP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No necesariamente. En nuestra experiencia, más del 60% de las deudas pensionales reportadas contienen errores, cobros duplicados o malas aplicaciones de pago. Por eso es fundamental realizar una auditoría pensional antes de pagar cualquier deuda reportada."
+        }
+      },{
+        "@type": "Question",
+        "name": "¿Qué pasa si mi empresa recibió una deuda de cientos de millones de pesos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No pague inmediatamente. Lo primero es auditar la deuda. Usted tiene derecho a defenderse y a pagar solo lo que realmente debe su empresa."
+        }
+      },{
+        "@type": "Question",
+        "name": "¿Cuánto tiempo tengo para responder a un requerimiento de Colpensiones o la UGPP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los plazos son estrictos: Requerimiento ordinario 15 días hábiles, Pliego de cargos UGPP 15 días hábiles, Liquidación oficial 30 días hábiles, Resolución de sanción 30 días hábiles. Es crucial actuar rápido."
+        }
+      },{
+        "@type": "Question",
+        "name": "¿Puedo negociar un acuerdo de pago con Colpensiones o la UGPP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, es posible negociar facilidades de pago, pero solo después de depurar la deuda. Primero depure, luego negocie."
+        }
+      }]
+    }
+    </script>`;
+
 newHeader = newHeader.replace(
     '</head>',
-    `${breadcrumbSchema}
+    `${breadcrumbSchema}${faqPageSchema}
 </head>`
 );
 
@@ -256,6 +295,305 @@ const mainContent = `
             </div>
         </section>
 
+        <!-- Why Debts Appear - Deuda Real vs Presunta -->
+        <section class="why-debts-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">¿Por Qué Aparecen Deudas Pensionales?</h2>
+                    <p class="section-description">Las deudas pensionales pueden ser reales o presuntas. Comprender la diferencia es fundamental para la defensa de su empresa.</p>
+                </div>
+
+                <div class="debt-types-grid">
+                    <div class="debt-type-card debt-real">
+                        <div class="debt-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>Deuda Real</h3>
+                        <p>Aportes efectivamente no realizados o mal liquidados por la empresa. Esta deuda existe y debe ser pagada.</p>
+                    </div>
+
+                    <div class="debt-type-card debt-presunta">
+                        <div class="debt-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 16v-4M12 8h.01"></path>
+                            </svg>
+                        </div>
+                        <h3>Deuda Presunta</h3>
+                        <p>Cobros sin sustento real, por errores administrativos o malas aplicaciones de pago. Puede ser eliminada completamente.</p>
+                    </div>
+                </div>
+
+                <div class="causes-section">
+                    <h3 class="causes-title">Causas Frecuentes de Deudas Pensionales</h3>
+                    <div class="causes-grid">
+                        <div class="cause-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 11l3 3L22 4"></path>
+                            </svg>
+                            <p>Errores en el reporte de semanas cotizadas</p>
+                        </div>
+                        <div class="cause-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 8v8M8 12h8"></path>
+                            </svg>
+                            <p>Pagos mal aplicados por Colpensiones o fondos privados</p>
+                        </div>
+                        <div class="cause-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            <p>Diferencias en la base de cotización</p>
+                        </div>
+                        <div class="cause-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                            <p>Cambios de razón social o fusiones empresariales</p>
+                        </div>
+                        <div class="cause-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            </svg>
+                            <p>Traslapes en cotizaciones (empleados en dos fondos simultáneamente)</p>
+                        </div>
+                        <div class="cause-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                            <p>Requerimientos indebidos por aportes ya cancelados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline (NO carousel, fixed timeline) -->
+        <section class="process-timeline-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-eyebrow">Nuestro Método</span>
+                    <h2 class="section-title">Proceso de Depuración Empresarial</h2>
+                    <p class="section-description">5 pasos para defender a su empresa ante deudas pensionales</p>
+                </div>
+
+                <div class="process-timeline">
+                    <!-- Step 1 -->
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Auditoría Inicial de Deuda</h3>
+                            <p>Revisamos liquidaciones, cuentas de cobro y certificaciones. Identificamos errores y fundamentos legales para la defensa.</p>
+                            <ul>
+                                <li>Análisis de liquidaciones oficiales</li>
+                                <li>Revisión de planillas PILA</li>
+                                <li>Informe técnico-jurídico</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Recopilación de Información</h3>
+                            <p>Solicitamos documentación soporte para construir la defensa: nómina, comprobantes de pago, contratos laborales.</p>
+                            <ul>
+                                <li>Contratos laborales y liquidaciones</li>
+                                <li>Planillas PILA históricas</li>
+                                <li>Comprobantes de pago y extractos bancarios</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Construcción de Defensa</h3>
+                            <p>Elaboramos la estrategia legal y administrativa con fundamentos jurídicos, pruebas y argumentos técnicos.</p>
+                            <ul>
+                                <li>Análisis jurídico de normativa aplicable</li>
+                                <li>Organización de pruebas documentales</li>
+                                <li>Estrategia de defensa administrativa o judicial</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Presentación de Recursos</h3>
+                            <p>Interponemos recursos de reposición, apelación o demandas según la etapa del proceso.</p>
+                            <ul>
+                                <li>Respuesta a requerimientos</li>
+                                <li>Recursos contra liquidaciones</li>
+                                <li>Demandas judiciales cuando proceda</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Seguimiento y Cierre</h3>
+                            <p>Hacemos seguimiento a las respuestas de Colpensiones, fondos o autoridades hasta obtener una resolución favorable.</p>
+                            <ul>
+                                <li>Monitoreo de tiempos procesales</li>
+                                <li>Respuestas a requerimientos adicionales</li>
+                                <li>Obtención de certificados de paz y salvo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information We Review -->
+        <section class="info-review-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Información que Revisamos</h2>
+                    <p class="section-description">Documentación necesaria para la auditoría y defensa de deudas pensionales</p>
+                </div>
+
+                <div class="info-review-grid">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Liquidaciones y Certificaciones</h3>
+                        <p>Liquidaciones oficiales, certificaciones de deuda, cuentas de cobro de Colpensiones y fondos privados</p>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="9" y1="9" x2="15" y2="9"></line>
+                            </svg>
+                        </div>
+                        <h3>Planillas PILA</h3>
+                        <p>Planillas de liquidación integrada de aportes (PILA) históricas de la empresa</p>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>Comprobantes de Pago</h3>
+                        <p>Recibos bancarios, extractos y soportes de transferencias de aportes pensionales</p>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h3>Nómina y Contratos</h3>
+                        <p>Contratos laborales, liquidaciones de nómina, certificaciones laborales de empleados</p>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>Requerimientos</h3>
+                        <p>Requerimientos de información, emplazamientos y actos administrativos previos</p>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <h3>Información Corporativa</h3>
+                        <p>Certificado de existencia, reformas estatutarias, fusiones, cambios de razón social</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Services -->
+        <section class="main-services-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-eyebrow">Nuestros Servicios</span>
+                    <h2 class="section-title">Servicio Integral de Depuración</h2>
+                    <p class="section-description">Auditoría, defensa y representación legal en obligaciones pensionales empresariales</p>
+                </div>
+
+                <div class="main-services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                        </div>
+                        <h3>Depuración con Colpensiones</h3>
+                        <p>Revisamos y depuramos obligaciones con Colpensiones, identificando cobros indebidos y errores administrativos.</p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                <path d="M9 9h6v6H9z"></path>
+                            </svg>
+                        </div>
+                        <h3>Fondos Privados de Pensiones</h3>
+                        <p>Depuramos obligaciones con fondos privados (Protección, Porvenir, Colfondos, Old Mutual).</p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 11l3 3L22 4"></path>
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                            </svg>
+                        </div>
+                        <h3>Auditoría Pensional Empresarial</h3>
+                        <p>Auditorías integrales para determinar el estado real de las obligaciones pensionales.</p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>Aportes No Aplicados</h3>
+                        <p>Gestionamos la aplicación correcta de aportes pagados pero no reflejados por las entidades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- MARKER_FAQ_HERE -->
 
         <!-- Final CTA -->
@@ -285,6 +623,41 @@ const mainContent = `
 faqSection = faqSection.replace(/class="colp-faq"/g, 'class="faq-section"');
 faqSection = faqSection.replace(/class="colp-faq-container"/g, 'class="faq-container"');
 
+// Extract only first 4 FAQ items
+const faqMatch = faqSection.match(/<div class="faq-container">([\s\S]*?)<\/div>\s*<\/div>\s*<\/section>/);
+if (faqMatch) {
+    const fullFaq = faqMatch[1];
+    const faqItems = fullFaq.match(/<div class="colp-faq-item">[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/g) || [];
+
+    // Keep only first 4 FAQ items
+    const first4Items = faqItems.slice(0, 4).join('\n                    ');
+
+    // Replace colp-faq class names with standard names
+    const cleanedItems = first4Items
+        .replace(/colp-faq-item/g, 'faq-item')
+        .replace(/colp-faq-question/g, 'faq-question')
+        .replace(/colp-faq-question-text/g, 'faq-question-text')
+        .replace(/colp-faq-icon/g, 'faq-icon')
+        .replace(/colp-faq-answer/g, 'faq-answer')
+        .replace(/colp-faq-answer-content/g, 'faq-answer-content');
+
+    faqSection = `
+        <!-- FAQ Simplified -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-eyebrow">Preguntas Frecuentes</span>
+                    <h2 class="section-title">Dudas sobre Depuración Empresarial</h2>
+                    <p class="section-description">Respuestas claras a las preguntas más comunes sobre depuración de deudas pensionales</p>
+                </div>
+
+                <div class="faq-container">
+                    ${cleanedItems}
+                </div>
+            </div>
+        </section>`;
+}
+
 // Ensamblar el HTML completo
 const completeHtml = newHeader + mainContent.replace('<!-- MARKER_FAQ_HERE -->', faqSection) + widgetsSection + footerSection + scriptsSection + '\n</body>\n</html>';
 
@@ -294,16 +667,18 @@ fs.writeFileSync('depuracion-de-deuda-real-y-presunta-de-colpensiones/index.html
 console.log('\n✨ ¡Página Colpensiones rediseñada exitosamente!');
 console.log('📄 Archivo: depuracion-de-deuda-real-y-presunta-de-colpensiones/index.html');
 console.log('\n📋 Cambios realizados:');
-console.log('  ✓ Metadata SEO actualizada');
+console.log('  ✓ Metadata SEO actualizada (title, description, Twitter Card)');
 console.log('  ✓ H1 optimizado: "Depuración de Deudas Pensionales para Empresas"');
 console.log('  ✓ Breadcrumbs implementados (schema + visual)');
-console.log('  ✓ Hero rediseñado');
+console.log('  ✓ Hero rediseñado con CTAs empresariales');
 console.log('  ✓ 8 tarjetas de identificación del problema');
-console.log('  ✓ FAQ conservado y simplificado');
+console.log('  ✓ Sección "¿Por Qué Aparecen Deudas?" (Deuda Real vs Presunta)');
+console.log('  ✓ Carrusel convertido a timeline fijo (5 pasos)');
+console.log('  ✓ Sección "Información que Revisamos" (6 documentos)');
+console.log('  ✓ Servicios principales (4 servicios)');
+console.log('  ✓ FAQ simplificado de 6 a 4 preguntas');
+console.log('  ✓ FAQPage schema agregado');
 console.log('  ✓ CTA Final corregido (para EMPRESAS, no personas)');
-console.log('  ✓ Error de Twitter Card corregido');
 console.log('  ✓ Nuevo CSS: colpensiones-page.css');
 console.log('\n✅ Backup guardado como: index.html.backup-redesign');
-
-console.log('\n⚠️  NOTA: Este es un primer paso. Aún faltan secciones por agregar.');
-console.log('Las secciones completas se agregarán en el siguiente paso.');
+console.log('\n🎯 Página completamente rediseñada y optimizada para SEO empresarial.');

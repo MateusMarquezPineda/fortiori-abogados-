@@ -1,0 +1,1258 @@
+/* ============================================
+   DERECHO EMPRESARIAL PAGE - CUSTOM STYLES
+   Visual Differentiator: Interactive Service Tabs System
+   ============================================ */
+
+/* ============================================
+   INTERACTIVE SERVICE TABS - VISUAL DIFFERENTIATOR
+   ============================================ */
+
+.empresarial-tabs-section {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.empresarial-tabs-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.empresarial-tabs-header .section-eyebrow {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(0, 102, 153, 0.1) 0%, rgba(0, 136, 204, 0.1) 100%);
+    color: #006699;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.empresarial-tabs-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 1rem;
+}
+
+.empresarial-tabs-header p {
+    font-size: 1.125rem;
+    color: #6c757d;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Tab Navigation */
+.tab-navigation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab-button {
+    background: #ffffff;
+    border: 2px solid rgba(0, 102, 153, 0.15);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 102, 153, 0.05) 0%, rgba(0, 136, 204, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tab-button:hover {
+    border-color: rgba(0, 102, 153, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 102, 153, 0.15);
+}
+
+.tab-button:hover::before {
+    opacity: 1;
+}
+
+.tab-button.active {
+    background: linear-gradient(135deg, #006699 0%, #0088cc 100%);
+    border-color: #006699;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 102, 153, 0.25);
+}
+
+.tab-button.active::before {
+    opacity: 0;
+}
+
+.tab-button-icon {
+    font-size: 3rem;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.tab-button:not(.active) .tab-button-icon {
+    filter: grayscale(0.3);
+}
+
+.tab-button.active .tab-button-icon {
+    transform: scale(1.1);
+}
+
+.tab-button-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #212529;
+    text-align: center;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.tab-button.active .tab-button-label {
+    color: #ffffff;
+}
+
+/* Tab Content */
+.tab-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 400px;
+}
+
+.tab-content-item {
+    display: none;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.tab-content-item.active {
+    display: block;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.tab-content-visual {
+    background: linear-gradient(135deg, #006699 0%, #0088cc 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    color: #ffffff;
+    position: sticky;
+    top: 2rem;
+}
+
+.tab-content-visual-icon {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.tab-content-visual h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.tab-content-visual p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.tab-content-details {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 3rem;
+    border: 2px solid rgba(0, 102, 153, 0.1);
+}
+
+.tab-content-details h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 2rem;
+}
+
+.tab-content-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tab-content-list li {
+    padding: 1.25rem 0;
+    padding-left: 2.5rem;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 102, 153, 0.1);
+    font-size: 1rem;
+    color: #495057;
+    line-height: 1.6;
+}
+
+.tab-content-list li:last-child {
+    border-bottom: none;
+}
+
+.tab-content-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 1.25rem;
+    color: #006699;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.tab-content-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(0, 102, 153, 0.1) 0%, rgba(0, 136, 204, 0.1) 100%);
+    color: #006699;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+
+/* Responsive Tabs */
+@media (max-width: 768px) {
+    .tab-navigation {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .tab-button {
+        padding: 1.5rem 1rem;
+    }
+
+    .tab-button-icon {
+        font-size: 2.5rem;
+    }
+
+    .tab-button-label {
+        font-size: 0.875rem;
+    }
+
+    .tab-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .tab-content-visual {
+        position: relative;
+        top: 0;
+        padding: 2rem;
+    }
+
+    .tab-content-visual-icon {
+        font-size: 3.5rem;
+    }
+
+    .tab-content-visual h3 {
+        font-size: 1.5rem;
+    }
+
+    .tab-content-details {
+        padding: 2rem;
+    }
+
+    .empresarial-tabs-header h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-navigation {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   HERO OVERRIDE - CENTERED LAYOUT
+   ============================================ */
+
+.ugpp-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.ugpp-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ugpp-hero h1 {
+    text-align: center;
+}
+
+.ugpp-hero-lead {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.ugpp-hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.ugpp-hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .ugpp-hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ugpp-hero-features {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+/* ============================================
+   BREADCRUMBS
+   ============================================ */
+
+.breadcrumbs {
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.breadcrumbs-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.breadcrumbs-item a {
+    color: #6c757d;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs-item a:hover {
+    color: #dc3545;
+}
+
+.breadcrumbs-item:not(:last-child):after {
+    content: "›";
+    color: #adb5bd;
+    margin-left: 0.5rem;
+}
+
+.breadcrumbs-item:last-child {
+    color: #212529;
+    font-weight: 500;
+}
+
+/* ============================================
+   HERO SECTION - DERECHO EMPRESARIAL
+   ============================================ */
+
+.empresarial-hero {
+    background: linear-gradient(135deg, #006699 0%, #004d73 100%);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.empresarial-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.empresarial-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+}
+
+.empresarial-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.empresarial-hero h1 .highlight {
+    color: #ffc107;
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.empresarial-hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+}
+
+.empresarial-hero-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.empresarial-hero-feature {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.empresarial-hero-feature:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.empresarial-hero-feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.empresarial-hero-feature-text strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+}
+
+.empresarial-hero-feature-text span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================
+   TIMELINE DE ACOMPAÑAMIENTO EMPRESARIAL
+   Visual Plus Differentiator
+   ============================================ */
+
+.timeline-section {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+}
+
+.timeline-section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.timeline-section-header h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 1rem;
+}
+
+.timeline-section-header p {
+    font-size: 1.125rem;
+    color: #6c757d;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Timeline Container */
+.empresarial-timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Timeline Line (Desktop) */
+.empresarial-timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,
+        #006699 0%,
+        #0088cc 25%,
+        #ffc107 50%,
+        #0088cc 75%,
+        #006699 100%);
+    transform: translateY(-50%);
+    border-radius: 2px;
+    z-index: 1;
+}
+
+/* Timeline Stages */
+.timeline-stages {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Timeline Stage Item */
+.timeline-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Stage Number Badge */
+.timeline-stage-number {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #006699 0%, #0088cc 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 5px 20px rgba(0, 102, 153, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 4px solid #ffffff;
+}
+
+.timeline-stage:nth-child(3) .timeline-stage-number {
+    background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
+    box-shadow: 0 5px 20px rgba(255, 193, 7, 0.4);
+}
+
+.timeline-stage-number:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 10px 30px rgba(0, 102, 153, 0.5);
+}
+
+/* Stage Card */
+.timeline-stage-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.timeline-stage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #006699, #0088cc);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.timeline-stage:nth-child(3) .timeline-stage-card::before {
+    background: linear-gradient(90deg, #ffc107, #ffb300);
+}
+
+.timeline-stage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 102, 153, 0.15);
+    border-color: rgba(0, 102, 153, 0.2);
+}
+
+.timeline-stage-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Stage Title */
+.timeline-stage-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #006699;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.timeline-stage:nth-child(3) .timeline-stage-title {
+    color: #ffc107;
+}
+
+/* Stage Description */
+.timeline-stage-description {
+    font-size: 0.95rem;
+    color: #495057;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Stage Benefits List */
+.timeline-stage-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-stage-benefits li {
+    font-size: 0.875rem;
+    color: #6c757d;
+    padding: 0.5rem 0;
+    padding-left: 1.75rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.timeline-stage-benefits li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #006699;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.timeline-stage:nth-child(3) .timeline-stage-benefits li::before {
+    color: #ffc107;
+}
+
+/* Animated Badge for Central Stage */
+.timeline-stage-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+    animation: pulse-badge 2s ease-in-out infinite;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@keyframes pulse-badge {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(255, 193, 7, 0.6);
+    }
+}
+
+/* ============================================
+   PROPUESTA DE VALOR - 4 PILLARS
+   ============================================ */
+
+.propuesta-section {
+    padding: 5rem 0;
+    background: #ffffff;
+}
+
+.propuesta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.propuesta-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.propuesta-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 102, 153, 0.05) 0%, rgba(0, 136, 204, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.propuesta-card:hover {
+    border-color: rgba(0, 102, 153, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 102, 153, 0.15);
+}
+
+.propuesta-card:hover::before {
+    opacity: 1;
+}
+
+.propuesta-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.propuesta-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #006699;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.propuesta-card p {
+    font-size: 1rem;
+    color: #495057;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+}
+
+/* ============================================
+   ÁREAS DE ACOMPAÑAMIENTO
+   ============================================ */
+
+.areas-section {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.area-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2.5rem;
+    border-left: 5px solid #006699;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.area-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 30px rgba(0, 102, 153, 0.15);
+    border-left-width: 8px;
+}
+
+.area-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.area-card-icon {
+    font-size: 2.5rem;
+    color: #006699;
+}
+
+.area-card-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin: 0;
+}
+
+.area-card-description {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.area-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.area-card-list li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 0.95rem;
+    color: #495057;
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(0, 102, 153, 0.1);
+}
+
+.area-card-list li:last-child {
+    border-bottom: none;
+}
+
+.area-card-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #006699;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* ============================================
+   SITUACIONES EMPRESARIALES - GRID
+   ============================================ */
+
+.situaciones-section {
+    padding: 5rem 0;
+    background: #ffffff;
+}
+
+.situaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.situacion-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 12px;
+    padding: 1.75rem;
+    border: 2px solid rgba(0, 102, 153, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.situacion-card:hover {
+    border-color: #006699;
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 102, 153, 0.12);
+    transform: translateY(-3px);
+}
+
+.situacion-icon {
+    font-size: 2rem;
+    color: #006699;
+    flex-shrink: 0;
+}
+
+.situacion-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 0.5rem;
+}
+
+.situacion-content p {
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ============================================
+   SERVICIOS ESPECIALIZADOS - INTERNAL LINKS
+   ============================================ */
+
+.servicios-especializados-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #006699 0%, #004d73 100%);
+    color: #ffffff;
+}
+
+.servicios-especializados-section h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.servicios-especializados-subtitle {
+    text-align: center;
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.servicios-especializados-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.servicio-especializado-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.servicio-especializado-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ffc107, #ffb300);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.servicio-especializado-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.servicio-especializado-card:hover::before {
+    transform: scaleX(1);
+}
+
+.servicio-especializado-card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.servicio-especializado-card p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.servicio-especializado-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #ffc107;
+    color: #212529;
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.servicio-especializado-link:hover {
+    background: #ffb300;
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(255, 193, 7, 0.4);
+}
+
+.servicio-especializado-link svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.servicio-especializado-link:hover svg {
+    transform: translateX(3px);
+}
+
+/* ============================================
+   CTA FINAL CON FORM INLINE
+   ============================================ */
+
+.cta-final-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.cta-final-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-final-container h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 1rem;
+}
+
+.cta-final-subtitle {
+    font-size: 1.125rem;
+    color: #6c757d;
+    margin-bottom: 3rem;
+}
+
+.cta-form-inline {
+    display: flex;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cta-form-inline input {
+    flex: 1;
+    min-width: 250px;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(0, 102, 153, 0.2);
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cta-form-inline input:focus {
+    outline: none;
+    border-color: #006699;
+    box-shadow: 0 0 0 4px rgba(0, 102, 153, 0.1);
+}
+
+.cta-form-inline button {
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #006699 0%, #0088cc 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.cta-form-inline button:hover {
+    background: linear-gradient(135deg, #004d73 0%, #006699 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 102, 153, 0.3);
+}
+
+.cta-contact-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.cta-contact-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #495057;
+    font-size: 1rem;
+}
+
+.cta-contact-icon {
+    font-size: 1.5rem;
+    color: #006699;
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Hero */
+    .empresarial-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .empresarial-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .empresarial-hero-features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Timeline - Switch to Vertical */
+    .empresarial-timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 40px;
+        right: auto;
+        width: 4px;
+        height: auto;
+        transform: none;
+        background: linear-gradient(180deg,
+            #006699 0%,
+            #0088cc 25%,
+            #ffc107 50%,
+            #0088cc 75%,
+            #006699 100%);
+    }
+
+    .timeline-stages {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding-left: 100px;
+    }
+
+    .timeline-stage {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .timeline-stage-number {
+        flex-shrink: 0;
+        margin-bottom: 0;
+        margin-left: -100px;
+    }
+
+    .timeline-stage-card {
+        min-height: auto;
+    }
+
+    /* Section Headers */
+    .timeline-section-header h2,
+    .propuesta-section h2,
+    .areas-section h2,
+    .situaciones-section h2 {
+        font-size: 1.75rem;
+    }
+
+    /* Grids */
+    .propuesta-grid,
+    .areas-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .situaciones-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .servicios-especializados-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* CTA Form */
+    .cta-form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-form-inline input,
+    .cta-form-inline button {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .empresarial-hero {
+        padding: 3rem 0;
+    }
+
+    .timeline-section,
+    .propuesta-section,
+    .areas-section,
+    .situaciones-section,
+    .servicios-especializados-section,
+    .cta-final-section {
+        padding: 3rem 0;
+    }
+
+    .timeline-stages {
+        padding-left: 80px;
+    }
+
+    .timeline-stage-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-left: -80px;
+    }
+}

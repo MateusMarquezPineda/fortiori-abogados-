@@ -61,6 +61,40 @@
     margin-right: auto;
 }
 
+.hero-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: center;
+    margin: var(--space-6) 0;
+}
+
+.hero-benefit-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(10px);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: rgba(255, 255, 255, 0.95);
+    transition: all 0.3s ease;
+}
+
+.hero-benefit-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.hero-benefit-item svg {
+    color: var(--brand-white);
+    flex-shrink: 0;
+}
+
 .colp-hero-ctas {
     display: flex;
     flex-wrap: wrap;
@@ -84,28 +118,64 @@
 
 .problem-card {
     background-color: var(--brand-white);
-    border-radius: var(--radius-lg);
-    padding: var(--space-6);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
+    border-radius: var(--radius-xl);
+    padding: var(--space-7);
+    border: 2px solid var(--gray-200);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand-red) 0%, #e63946 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.problem-card:hover::before {
+    transform: scaleX(1);
 }
 
 .problem-card:hover {
     border-color: var(--brand-red);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
 }
 
 .problem-card-icon {
-    width: 56px;
-    height: 56px;
-    background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
-    border-radius: var(--radius-lg);
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--brand-red) 0%, #e63946 100%);
+    border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-5);
+    box-shadow: 0 8px 20px rgba(220, 53, 69, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.problem-card:hover .problem-card-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 28px rgba(220, 53, 69, 0.3);
+}
+
+.problem-card-icon::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(230, 57, 70, 0.05) 100%);
+    border-radius: var(--radius-xl);
+    z-index: -1;
 }
 
 .problem-card-icon svg {
@@ -113,14 +183,15 @@
 }
 
 .problem-card h3 {
-    font-size: var(--text-xl);
+    font-size: 1.125rem;
     font-weight: var(--font-bold);
     color: var(--brand-black);
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.02em;
 }
 
 .problem-card p {
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     line-height: 1.6;
     color: var(--text-secondary);
 }
@@ -726,5 +797,533 @@
 
     .final-cta-buttons .btn {
         width: 100%;
+    }
+}
+
+/* Additional New Sections */
+
+/* Why Debts Section */
+.why-debts-section {
+    padding: var(--space-20) 0;
+    background-color: var(--brand-white);
+}
+
+/* Visual Comparison */
+.debt-comparison {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+    align-items: center;
+}
+
+.comparison-card {
+    background: var(--brand-white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.comparison-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    transition: height 0.3s ease;
+}
+
+.debt-real-card::before {
+    background: linear-gradient(90deg, var(--brand-red) 0%, #e63946 100%);
+}
+
+.debt-presunta-card::before {
+    background: linear-gradient(90deg, #ffc107 0%, #ff9800 100%);
+}
+
+.comparison-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.comparison-card:hover::before {
+    height: 6px;
+}
+
+.comparison-badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-4);
+}
+
+.badge-danger {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(220, 53, 69, 0.15) 100%);
+    color: var(--brand-red);
+    border: 2px solid rgba(220, 53, 69, 0.2);
+}
+
+.badge-warning {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 152, 0, 0.15) 100%);
+    color: #ff9800;
+    border: 2px solid rgba(255, 152, 0, 0.2);
+}
+
+.comparison-icon-large {
+    width: 100px;
+    height: 100px;
+    margin: var(--space-6) auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+}
+
+.debt-real-card .comparison-icon-large {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(220, 53, 69, 0.05) 100%);
+}
+
+.debt-presunta-card .comparison-icon-large {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 152, 0, 0.05) 100%);
+}
+
+.debt-real-card .comparison-icon-large svg {
+    color: var(--brand-red);
+}
+
+.debt-presunta-card .comparison-icon-large svg {
+    color: #ff9800;
+}
+
+.comparison-card h3 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    text-align: center;
+    margin-bottom: var(--space-3);
+    color: var(--brand-black);
+}
+
+.comparison-description {
+    text-align: center;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+    font-size: var(--text-base);
+}
+
+.comparison-stats {
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-6);
+    text-align: center;
+}
+
+.stat-item {
+    margin-bottom: 0;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: var(--font-bold);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+}
+
+.debt-real-card .stat-value {
+    background: linear-gradient(135deg, var(--brand-red) 0%, #e63946 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.debt-presunta-card .stat-value {
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.comparison-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.action-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+    transition: all 0.2s ease;
+}
+
+.action-item:hover {
+    background: var(--gray-100);
+    transform: translateX(4px);
+}
+
+.action-item svg {
+    flex-shrink: 0;
+}
+
+.debt-real-card .action-item svg {
+    color: var(--brand-red);
+}
+
+.debt-presunta-card .action-item svg {
+    color: #ff9800;
+}
+
+.action-item span {
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    font-weight: var(--font-medium);
+}
+
+.comparison-vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--space-4);
+}
+
+.vs-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-red) 0%, #ff9800 100%);
+    color: var(--brand-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: var(--font-bold);
+    box-shadow: 0 8px 24px rgba(220, 53, 69, 0.3);
+    position: relative;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 8px 24px rgba(220, 53, 69, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(220, 53, 69, 0.5);
+    }
+}
+
+.causes-section {
+    background: var(--gray-50);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    margin-top: var(--space-8);
+}
+
+.causes-title {
+    text-align: center;
+    font-size: var(--text-2xl);
+    color: var(--brand-red);
+    margin-bottom: var(--space-6);
+}
+
+/* Process Timeline Section */
+.process-timeline-section {
+    padding: var(--space-20) 0;
+    background: linear-gradient(180deg, var(--gray-50) 0%, var(--brand-white) 100%);
+}
+
+.step-number {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--brand-red) 0%, #e63946 100%);
+    color: var(--brand-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: var(--font-bold);
+    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(220, 53, 69, 0.25);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.process-step:hover .step-number {
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(220, 53, 69, 0.35);
+}
+
+.step-number::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.1) 0%, rgba(230, 57, 70, 0.1) 100%);
+    z-index: -1;
+}
+
+.step-content {
+    flex: 1;
+    background: var(--brand-white);
+    padding: var(--space-7);
+    border-radius: var(--radius-xl);
+    border: 2px solid var(--gray-200);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.process-step:hover .step-content {
+    border-color: var(--brand-red);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    transform: translateX(8px);
+}
+
+.step-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--brand-red) 0%, #e63946 100%);
+    border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.process-step:hover .step-content::before {
+    opacity: 1;
+}
+
+.step-content h3 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--brand-black);
+    margin-bottom: var(--space-3);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.step-content h3::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(180deg, var(--brand-red) 0%, #e63946 100%);
+    border-radius: 2px;
+}
+
+.step-content p {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+}
+
+.step-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-3);
+}
+
+.step-content ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    padding: var(--space-3);
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--brand-red);
+    transition: all 0.2s ease;
+}
+
+.step-content ul li:hover {
+    background: rgba(220, 53, 69, 0.05);
+    transform: translateX(4px);
+}
+
+.step-content ul li:before {
+    content: "✓";
+    color: var(--brand-red);
+    font-weight: var(--font-bold);
+    font-size: var(--text-base);
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(220, 53, 69, 0.1);
+    border-radius: 50%;
+}
+
+/* Info Review Section */
+.info-review-section {
+    padding: var(--space-20) 0;
+    background-color: var(--brand-white);
+}
+
+.info-review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-12);
+}
+
+.info-item {
+    background-color: var(--gray-50);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    border-left: 4px solid var(--brand-red);
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    background-color: var(--brand-white);
+}
+
+.info-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+}
+
+.info-icon svg {
+    color: var(--brand-white);
+}
+
+.info-item h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--brand-black);
+    margin-bottom: var(--space-2);
+}
+
+.info-item p {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Main Services Section */
+.main-services-section {
+    padding: var(--space-20) 0;
+    background-color: var(--gray-50);
+}
+
+.main-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-12);
+}
+
+.service-icon {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+}
+
+.service-icon svg {
+    color: var(--brand-white);
+}
+
+@media (max-width: 767px) {
+    .debt-types-grid,
+    .info-review-grid,
+    .main-services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .step-content {
+        padding: var(--space-4);
+    }
+
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: var(--text-2xl);
+    }
+
+    /* Comparativa responsive */
+    .debt-comparison {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .comparison-vs {
+        order: 2;
+        padding: var(--space-4) 0;
+    }
+
+    .vs-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.25rem;
+    }
+
+    .debt-real-card {
+        order: 1;
+    }
+
+    .debt-presunta-card {
+        order: 3;
+    }
+
+    .comparison-icon-large {
+        width: 80px;
+        height: 80px;
+    }
+
+    .comparison-icon-large svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .comparison-card h3 {
+        font-size: var(--text-2xl);
+    }
+
+    .stat-value {
+        font-size: 2rem;
     }
 }
