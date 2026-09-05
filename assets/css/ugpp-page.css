@@ -2,6 +2,33 @@
    UGPP PAGE STYLES
    ================================ */
 
+/* Prevenir scroll horizontal en móvil */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+}
+
+body {
+    position: relative;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Asegurar que todos los contenedores respeten el ancho del viewport */
+.container,
+section,
+.analysis-carousel-wrapper,
+.analysis-grid,
+.services-grid,
+.phases-grid,
+.situation-grid {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 /* Hero UGPP */
 .ugpp-hero {
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
@@ -309,11 +336,46 @@
     z-index: 1;
 }
 
+/* Carousel Wrapper */
+.analysis-carousel-wrapper {
+    position: relative;
+    margin-top: var(--space-12);
+    overflow: hidden;
+    max-width: 100%;
+}
+
 .analysis-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: var(--space-6);
-    margin-top: var(--space-12);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    scroll-behavior: smooth;
+    max-width: 100%;
+}
+
+/* Mobile: Grid de 1 columna sin overflow */
+@media (max-width: 767px) {
+    .analysis-carousel-wrapper {
+        overflow: visible;
+        padding: 0;
+    }
+
+    .analysis-grid {
+        grid-template-columns: 1fr;
+        transform: none !important;
+    }
+}
+
+/* Desktop: Show 3 cards, hide overflow */
+@media (min-width: 1024px) {
+    .analysis-carousel-wrapper {
+        overflow: hidden;
+        padding: 0 var(--space-16);
+    }
+
+    .analysis-grid {
+        grid-template-columns: repeat(5, calc(33.333% - var(--space-4)));
+    }
 }
 
 .analysis-pillar {
@@ -322,11 +384,101 @@
     background-color: var(--brand-white);
     border-radius: var(--radius-lg);
     transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
 }
 
 .analysis-pillar:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
+}
+
+/* Carousel Navigation Buttons */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: var(--brand-white);
+    border: 2px solid var(--gray-200);
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 1024px) {
+    .carousel-nav {
+        display: flex;
+    }
+}
+
+.carousel-nav:hover {
+    background: var(--brand-red);
+    border-color: var(--brand-red);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav:hover svg {
+    color: var(--brand-white);
+}
+
+.carousel-nav svg {
+    color: var(--brand-red);
+    transition: color 0.3s ease;
+}
+
+.carousel-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.carousel-nav-prev {
+    left: 0;
+}
+
+.carousel-nav-next {
+    right: 0;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+    .carousel-indicators {
+        display: none;
+    }
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gray-300);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-indicator:hover {
+    background: var(--gray-400);
+}
+
+.carousel-indicator.active {
+    background: var(--brand-red);
+    width: 24px;
+    border-radius: 5px;
 }
 
 .analysis-icon {
@@ -488,6 +640,54 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--space-6);
     margin-top: var(--space-12);
+}
+
+/* En desktop con 3 columnas, la última tarjeta ocupa toda la fila */
+@media (min-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Si hay 7 cards, la última ocupa las 3 columnas (fila completa) */
+    .service-card:nth-child(7):last-child {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    /* Centrar también los elementos internos de la última tarjeta */
+    .service-card:nth-child(7):last-child .service-highlights {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .service-card:nth-child(7):last-child .phase-cta {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* En tablet con 2 columnas, la última tarjeta ocupa toda la fila */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Si hay 7 cards, la última ocupa las 2 columnas (fila completa) */
+    .service-card:nth-child(7):last-child {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    /* Centrar también los elementos internos de la última tarjeta */
+    .service-card:nth-child(7):last-child .service-highlights {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .service-card:nth-child(7):last-child .phase-cta {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .service-card {
