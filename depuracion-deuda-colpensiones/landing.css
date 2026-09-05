@@ -1,0 +1,957 @@
+/**
+ * Landing Page - Depuración Deuda Colpensiones
+ * CSS específico para landing de captación
+ * Mantiene identidad visual de FORTIORI
+ */
+
+/* ============================================================================
+   HERO LANDING
+   ============================================================================ */
+
+.landing-hero {
+    background: linear-gradient(135deg, var(--brand-black) 0%, #1a1a1a 100%);
+    padding: clamp(3rem, 8vw, 6rem) 0 clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--brand-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.landing-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(179, 0, 27, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.landing-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.landing-eyebrow {
+    display: inline-block;
+    background: rgba(179, 0, 27, 0.15);
+    border: 1px solid rgba(179, 0, 27, 0.3);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: var(--space-6);
+    text-transform: lowercase;
+}
+
+.landing-hero h1 {
+    font-size: clamp(1.75rem, 5vw, 3.25rem);
+    font-weight: var(--font-bold);
+    color: var(--brand-white);
+    margin-bottom: var(--space-5);
+    line-height: 1.15;
+}
+
+.landing-hero-lead {
+    font-size: clamp(1rem, 2.5vw, 1.375rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-8);
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.landing-hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: center;
+    margin-bottom: var(--space-4);
+}
+
+.landing-hero-disclaimer {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+/* ============================================================================
+   PROBLEMAS - IDENTIFICACIÓN
+   ============================================================================ */
+
+.landing-problems {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background-color: var(--gray-50);
+}
+
+.landing-problems h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: var(--font-bold);
+    text-align: center;
+    margin-bottom: var(--space-12);
+    color: var(--brand-black);
+}
+
+.landing-problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-4);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.landing-problem-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background-color: var(--brand-white);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--gray-200);
+    transition: all 0.3s ease;
+}
+
+.landing-problem-item:hover {
+    border-color: var(--brand-red);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.landing-problem-item svg {
+    flex-shrink: 0;
+    color: var(--brand-red);
+    margin-top: 2px;
+}
+
+.landing-problem-item span {
+    font-size: var(--text-base);
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+/* ============================================================================
+   QUÉ HACEMOS
+   ============================================================================ */
+
+.landing-what-we-do {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background-color: var(--brand-white);
+}
+
+.landing-what-we-do h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: var(--font-bold);
+    text-align: center;
+    margin-bottom: var(--space-4);
+    color: var(--brand-black);
+}
+
+.landing-section-intro {
+    text-align: center;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto var(--space-10);
+}
+
+.landing-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.landing-service-card {
+    background-color: var(--gray-50);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.landing-service-card:hover {
+    border-color: var(--brand-red);
+    background-color: var(--brand-white);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.landing-service-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+}
+
+.landing-service-icon svg {
+    color: var(--brand-white);
+}
+
+.landing-service-card h3 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--brand-black);
+    margin-bottom: var(--space-2);
+}
+
+.landing-service-card p {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* ============================================================================
+   TIPOS DE DEUDA
+   ============================================================================ */
+
+.landing-debt-types {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background-color: var(--gray-50);
+}
+
+.landing-debt-types h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: var(--font-bold);
+    text-align: center;
+    margin-bottom: var(--space-4);
+    color: var(--brand-black);
+}
+
+.landing-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.landing-debt-card {
+    background-color: var(--brand-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    border: 2px solid var(--gray-200);
+    transition: all 0.3s ease;
+}
+
+.landing-debt-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.landing-debt-presunta {
+    border-top: 4px solid #ff9800;
+}
+
+.landing-debt-presunta:hover {
+    border-color: #ff9800;
+}
+
+.landing-debt-real {
+    border-top: 4px solid var(--brand-red);
+}
+
+.landing-debt-real:hover {
+    border-color: var(--brand-red);
+}
+
+.landing-debt-card h3 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--brand-black);
+    margin-bottom: var(--space-3);
+}
+
+.landing-debt-card > p {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-4);
+}
+
+.landing-example {
+    background-color: var(--gray-50);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--brand-red);
+}
+
+.landing-debt-presunta .landing-example {
+    border-left-color: #ff9800;
+}
+
+.landing-example strong {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--brand-black);
+    margin-bottom: var(--space-2);
+}
+
+.landing-example p {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.landing-highlight {
+    max-width: 700px;
+    margin: var(--space-10) auto 0;
+    text-align: center;
+    padding: var(--space-6);
+    background: linear-gradient(135deg, rgba(179, 0, 27, 0.05) 0%, rgba(179, 0, 27, 0.02) 100%);
+    border-radius: var(--radius-lg);
+    border: 2px solid rgba(179, 0, 27, 0.1);
+}
+
+.landing-highlight p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.landing-highlight p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================================================
+   EJEMPLO VISUAL - FLUJO
+   ============================================================================ */
+
+.landing-example-flow {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background-color: var(--brand-white);
+}
+
+.landing-example-flow h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: var(--font-bold);
+    text-align: center;
+    margin-bottom: var(--space-10);
+    color: var(--brand-black);
+}
+
+.landing-flow {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.landing-flow-step {
+    background-color: var(--gray-50);
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--gray-200);
+    position: relative;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.landing-flow-step:hover {
+    border-color: var(--brand-red);
+    background-color: var(--brand-white);
+    box-shadow: var(--shadow-md);
+}
+
+.landing-flow-step.landing-flow-result {
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
+    border-color: var(--brand-red);
+    color: var(--brand-white);
+}
+
+.landing-flow-number {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
+    color: var(--brand-white);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-bold);
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-3);
+}
+
+.landing-flow-result .landing-flow-number {
+    background: var(--brand-white);
+    color: var(--brand-red);
+    font-size: var(--text-2xl);
+}
+
+.landing-flow-step p {
+    font-size: var(--text-base);
+    line-height: 1.5;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.landing-flow-result p {
+    color: var(--brand-white);
+    font-weight: var(--font-medium);
+}
+
+.landing-flow-arrow {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--brand-red);
+    margin: var(--space-3) 0;
+    font-weight: var(--font-bold);
+}
+
+.landing-disclaimer {
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-top: var(--space-8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+}
+
+/* ============================================================================
+   CÓMO FUNCIONA
+   ============================================================================ */
+
+.landing-how-it-works {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background-color: var(--gray-50);
+}
+
+.landing-how-it-works h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: var(--font-bold);
+    text-align: center;
+    margin-bottom: var(--space-10);
+    color: var(--brand-black);
+}
+
+.landing-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.landing-step-card {
+    background-color: var(--brand-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--gray-200);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.landing-step-card:hover {
+    border-color: var(--brand-red);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.landing-step-number {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
+    color: var(--brand-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-bold);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+}
+
+.landing-step-card h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--brand-black);
+    margin-bottom: var(--space-2);
+}
+
+.landing-step-card p {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* ============================================================================
+   MOMENTOS DEL CLIENTE
+   ============================================================================ */
+
+.landing-moments {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background-color: var(--brand-white);
+}
+
+.landing-moments h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: var(--font-bold);
+    text-align: center;
+    margin-bottom: var(--space-10);
+    color: var(--brand-black);
+}
+
+.landing-moments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-5);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.landing-moment-card {
+    background-color: var(--gray-50);
+    padding: var(--space-5);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--gray-200);
+    border-left: 4px solid var(--brand-red);
+    transition: all 0.3s ease;
+}
+
+.landing-moment-card:hover {
+    background-color: var(--brand-white);
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+}
+
+.landing-moment-card h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--brand-black);
+    margin-bottom: var(--space-2);
+}
+
+.landing-moment-card p {
+    font-size: var(--text-base);
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.landing-cta-centered {
+    text-align: center;
+    margin-top: var(--space-10);
+}
+
+/* ============================================================================
+   QUÉ INCLUYE
+   ============================================================================ */
+
+.landing-includes {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background-color: var(--gray-50);
+}
+
+.landing-includes h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: var(--font-bold);
+    text-align: center;
+    margin-bottom: var(--space-10);
+    color: var(--brand-black);
+}
+
+.landing-includes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-3);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.landing-include-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--brand-white);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-200);
+    transition: all 0.2s ease;
+}
+
+.landing-include-item:hover {
+    border-color: var(--brand-red);
+    box-shadow: var(--shadow-sm);
+}
+
+.landing-include-item svg {
+    flex-shrink: 0;
+    color: var(--brand-red);
+}
+
+.landing-include-item span {
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    font-weight: var(--font-medium);
+}
+
+/* ============================================================================
+   CTA CONVERSIÓN
+   ============================================================================ */
+
+.landing-conversion-cta {
+    padding: clamp(3rem, 8vw, 4.5rem) 0;
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
+    color: var(--brand-white);
+    text-align: center;
+}
+
+.landing-conversion-cta h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: var(--font-bold);
+    color: var(--brand-white);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+}
+
+.landing-conversion-cta p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: var(--space-6);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ============================================================================
+   FORMULARIO
+   ============================================================================ */
+
+.landing-form-section {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background-color: var(--brand-white);
+}
+
+.landing-form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--gray-50);
+    padding: clamp(2rem, 5vw, 3rem);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.landing-form-container h2 {
+    font-size: clamp(1.375rem, 3vw, 1.875rem);
+    font-weight: var(--font-bold);
+    text-align: center;
+    margin-bottom: var(--space-8);
+    color: var(--brand-black);
+}
+
+.landing-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-5);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.form-group label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--brand-black);
+}
+
+.required {
+    color: var(--brand-red);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    border: 2px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+    font-family: var(--font-primary);
+    transition: all 0.2s ease;
+    background-color: var(--brand-white);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--brand-red);
+    box-shadow: 0 0 0 3px rgba(179, 0, 27, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-consent {
+    margin-top: var(--space-2);
+}
+
+.form-consent label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.form-consent input[type="checkbox"] {
+    margin-top: 3px;
+    flex-shrink: 0;
+    cursor: pointer;
+    accent-color: var(--brand-red);
+}
+
+.form-consent a {
+    color: var(--brand-red);
+    text-decoration: underline;
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: var(--space-2);
+}
+
+/* ============================================================================
+   FAQ
+   ============================================================================ */
+
+.landing-faq {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background-color: var(--gray-50);
+}
+
+.landing-faq h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: var(--font-bold);
+    text-align: center;
+    margin-bottom: var(--space-10);
+    color: var(--brand-black);
+}
+
+.landing-faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.landing-faq-item {
+    background-color: var(--brand-white);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+    border: 2px solid var(--gray-200);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.landing-faq-item.active {
+    border-color: var(--brand-red);
+}
+
+.landing-faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: var(--space-4) var(--space-5);
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    transition: background-color 0.2s ease;
+}
+
+.landing-faq-question:hover {
+    background-color: var(--gray-50);
+}
+
+.landing-faq-question span {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--brand-black);
+}
+
+.landing-faq-question svg {
+    flex-shrink: 0;
+    color: var(--brand-red);
+    transition: transform 0.3s ease;
+}
+
+.landing-faq-item.active .landing-faq-question svg {
+    transform: rotate(180deg);
+}
+
+.landing-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.landing-faq-item.active .landing-faq-answer {
+    max-height: 500px;
+}
+
+.landing-faq-answer p {
+    padding: 0 var(--space-5) var(--space-5);
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* ============================================================================
+   CTA FINAL
+   ============================================================================ */
+
+.landing-final-cta {
+    padding: clamp(3rem, 8vw, 4.5rem) 0;
+    background: linear-gradient(135deg, var(--brand-black) 0%, #1a1a1a 100%);
+    color: var(--brand-white);
+    text-align: center;
+}
+
+.landing-final-cta h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: var(--font-bold);
+    color: var(--brand-white);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+}
+
+.landing-final-cta p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-6);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.landing-final-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: center;
+}
+
+.btn-outline-white {
+    background-color: transparent;
+    color: var(--brand-white);
+    border-color: var(--brand-white);
+}
+
+.btn-outline-white:hover {
+    background-color: var(--brand-white);
+    color: var(--brand-black);
+}
+
+/* ============================================================================
+   MÁS INFORMACIÓN
+   ============================================================================ */
+
+.landing-more-info {
+    padding: var(--space-6) 0;
+    background-color: var(--gray-100);
+    text-align: center;
+}
+
+.landing-more-info p {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.landing-more-info a {
+    color: var(--brand-red);
+    text-decoration: underline;
+    font-weight: var(--font-medium);
+}
+
+.landing-more-info a:hover {
+    color: var(--red-dark);
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE
+   ============================================================================ */
+
+@media (max-width: 767px) {
+    .landing-hero {
+        padding: 2.5rem 0 2rem;
+    }
+
+    .landing-hero-ctas {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .landing-hero-ctas .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .landing-problems-grid,
+    .landing-services-grid,
+    .landing-comparison,
+    .landing-steps,
+    .landing-moments-grid,
+    .landing-includes-list {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-form-container {
+        padding: 1.5rem;
+    }
+
+    .landing-final-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .landing-final-buttons .btn {
+        width: 100%;
+    }
+
+    .landing-faq-question span {
+        font-size: var(--text-base);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .landing-services-grid,
+    .landing-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

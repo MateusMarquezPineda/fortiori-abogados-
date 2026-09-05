@@ -285,7 +285,29 @@
 /* Process Timeline - Fixed (not carousel) */
 .process-section {
     padding: var(--space-20) 0;
-    background-color: var(--gray-50);
+    background:
+        radial-gradient(circle at 10% 20%, rgba(179, 0, 27, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(17, 17, 17, 0.04) 0%, transparent 50%),
+        linear-gradient(180deg, var(--gray-50) 0%, var(--brand-white) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.process-section::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(179, 0, 27, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.process-section .container {
+    position: relative;
+    z-index: 1;
 }
 
 .process-timeline {
