@@ -147,7 +147,6 @@ main .container {
 .situation-slider {
     margin-top: var(--space-12);
     position: relative;
-    padding-bottom: var(--space-12);
 }
 
 .situation-slider-wrapper {
@@ -260,39 +259,11 @@ main .container {
 
 /* Slider Controls */
 .situation-slider-controls {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: var(--space-6);
     margin-top: var(--space-8);
-}
-
-/* Desktop: Botones a los lados */
-@media (min-width: 768px) {
-    .situation-slider-controls {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        right: 0;
-        transform: translateY(-50%);
-        justify-content: space-between;
-        padding: 0 var(--space-4);
-        pointer-events: none;
-        margin-top: 0;
-    }
-
-    .situation-slider-btn {
-        pointer-events: all;
-    }
-
-    .situation-slider-dots {
-        position: absolute;
-        bottom: calc(-1 * var(--space-12));
-        left: 50%;
-        transform: translateX(-50%);
-        pointer-events: all;
-    }
 }
 
 .situation-slider-wrapper {
@@ -303,22 +274,15 @@ main .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     background: var(--brand-white);
     border: 2px solid var(--gray-200);
     border-radius: var(--radius-full);
     color: var(--brand-red);
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: var(--shadow-lg);
-}
-
-@media (min-width: 768px) {
-    .situation-slider-btn {
-        width: 64px;
-        height: 64px;
-    }
+    box-shadow: var(--shadow-sm);
 }
 
 .situation-slider-btn:hover {
