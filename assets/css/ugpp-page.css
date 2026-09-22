@@ -18,13 +18,18 @@ body {
 }
 
 /* Asegurar que todos los contenedores respeten el ancho del viewport */
-.container,
 section,
 .analysis-carousel-wrapper,
 .analysis-grid,
 .services-grid,
 .phases-grid,
 .situation-grid {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Aplicar max-width solo a containers de contenido (no header) */
+main .container {
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -113,13 +118,10 @@ section,
     border-color: rgba(255, 255, 255, 0.6);
 }
 
-/* Situation Cards - ¿Recibió una actuación? */
+/* Situation Slider - ¿Recibió una actuación? */
 .situation-section {
     padding: var(--space-20) 0;
-    background:
-        radial-gradient(circle at 10% 20%, rgba(179, 0, 27, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 90% 80%, rgba(17, 17, 17, 0.04) 0%, transparent 50%),
-        linear-gradient(180deg, var(--gray-50) 0%, var(--brand-white) 100%);
+    background: var(--brand-white);
     position: relative;
     overflow: hidden;
 }
@@ -141,64 +143,265 @@ section,
     z-index: 1;
 }
 
-.situation-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-6);
+/* Slider Container */
+.situation-slider {
     margin-top: var(--space-12);
-}
-
-.situation-card {
-    background-color: var(--brand-white);
-    border-radius: var(--radius-lg);
-    padding: var(--space-6);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    cursor: pointer;
     position: relative;
+    padding-bottom: var(--space-12);
 }
 
-.situation-card:hover {
-    border-color: var(--brand-red);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
+.situation-slider-wrapper {
+    overflow: hidden;
+    border-radius: var(--radius-xl);
+    background: var(--brand-white);
+    box-shadow: var(--shadow-lg);
 }
 
-.situation-card-icon {
-    width: 56px;
-    height: 56px;
+.situation-slider-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.situation-slide {
+    min-width: 100%;
+    padding: var(--space-10) var(--space-8);
+}
+
+.situation-slide-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.situation-slide-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
     background: linear-gradient(135deg, var(--brand-red) 0%, var(--red-dark) 100%);
-    border-radius: var(--radius-lg);
+    color: var(--brand-white);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    border-radius: var(--radius-full);
+    margin: 0 auto var(--space-6);
+}
+
+.situation-slide-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(179, 0, 27, 0.1) 0%, rgba(179, 0, 27, 0.05) 100%);
+    border: 2px solid var(--brand-red);
+    border-radius: var(--radius-xl);
+    margin: 0 auto var(--space-6);
+}
+
+.situation-slide-icon svg {
+    color: var(--brand-red);
+}
+
+.situation-slide-title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--brand-black);
+    margin-bottom: var(--space-4);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.situation-slide-description {
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+}
+
+.situation-slide-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-3);
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.situation-slide-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--text-primary);
+    padding: var(--space-3) var(--space-4);
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--brand-red);
+}
+
+.situation-slide-list li::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    background: var(--brand-red);
+    color: var(--brand-white);
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: var(--font-bold);
+    margin-top: 2px;
+}
+
+/* Slider Controls */
+.situation-slider-controls {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-4);
+    gap: var(--space-6);
+    margin-top: var(--space-8);
 }
 
-.situation-card-icon svg {
+/* Desktop: Botones a los lados */
+@media (min-width: 768px) {
+    .situation-slider-controls {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        justify-content: space-between;
+        padding: 0 var(--space-4);
+        pointer-events: none;
+        margin-top: 0;
+    }
+
+    .situation-slider-btn {
+        pointer-events: all;
+    }
+
+    .situation-slider-dots {
+        position: absolute;
+        bottom: calc(-1 * var(--space-12));
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: all;
+    }
+}
+
+.situation-slider-wrapper {
+    position: relative;
+}
+
+.situation-slider-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: var(--brand-white);
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-full);
+    color: var(--brand-red);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+    .situation-slider-btn {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+.situation-slider-btn:hover {
+    background: var(--brand-red);
+    border-color: var(--brand-red);
     color: var(--brand-white);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
 }
 
-.situation-card h3 {
-    font-size: var(--text-xl);
-    font-weight: var(--font-bold);
-    color: var(--brand-black);
-    margin-bottom: var(--space-2);
+.situation-slider-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    transform: none;
 }
 
-.situation-card p {
-    font-size: var(--text-base);
-    line-height: 1.6;
-    color: var(--text-secondary);
+.situation-slider-btn:disabled:hover {
+    background: var(--brand-white);
+    border-color: var(--gray-200);
+    color: var(--brand-red);
+}
+
+/* Dots */
+.situation-slider-dots {
+    display: flex;
+    gap: var(--space-2);
+    align-items: center;
+}
+
+.situation-slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    background: var(--gray-300);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.situation-slider-dot:hover {
+    background: var(--gray-400);
+    transform: scale(1.2);
+}
+
+.situation-slider-dot.active {
+    background: var(--brand-red);
+    width: 32px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .situation-slide {
+        padding: var(--space-8) var(--space-4);
+    }
+
+    .situation-slide-title {
+        font-size: var(--text-2xl);
+    }
+
+    .situation-slide-description {
+        font-size: var(--text-base);
+    }
+
+    .situation-slide-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .situation-slide-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .situation-slide-list li {
+        font-size: var(--text-sm);
+    }
 }
 
 /* Defense Phases - 6 Fases Agrupadas */
 .defense-phases {
     padding: var(--space-20) 0;
-    background:
-        radial-gradient(circle at 85% 15%, rgba(179, 0, 27, 0.06) 0%, transparent 40%),
-        radial-gradient(circle at 15% 85%, rgba(17, 17, 17, 0.05) 0%, transparent 40%),
-        linear-gradient(180deg, var(--brand-white) 0%, var(--gray-50) 50%, var(--brand-white) 100%);
+    background: var(--gray-50);
     position: relative;
 }
 
@@ -221,9 +424,23 @@ section,
 
 .phases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--space-8);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
     margin-top: var(--space-12);
+}
+
+/* Tablet - 2 columnas */
+@media (max-width: 1023px) {
+    .phases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile - 1 columna */
+@media (max-width: 767px) {
+    .phases-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .phase-card {
@@ -313,9 +530,7 @@ section,
 /* Analysis Pillars - Cómo Analizamos */
 .analysis-section {
     padding: var(--space-20) 0;
-    background:
-        radial-gradient(ellipse at 50% 0%, rgba(179, 0, 27, 0.06) 0%, transparent 50%),
-        linear-gradient(180deg, var(--gray-50) 0%, var(--brand-white) 100%);
+    background: var(--brand-white);
     position: relative;
 }
 
@@ -348,33 +563,24 @@ section,
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: var(--space-6);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    scroll-behavior: smooth;
-    max-width: 100%;
+    margin-top: var(--space-12);
 }
 
-/* Mobile: Grid de 1 columna sin overflow */
-@media (max-width: 767px) {
-    .analysis-carousel-wrapper {
-        overflow: visible;
-        padding: 0;
-    }
+.analysis-carousel-wrapper {
+    position: relative;
+}
 
+/* Tablet: 3 columnas */
+@media (max-width: 1023px) {
+    .analysis-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile: 1 columna */
+@media (max-width: 767px) {
     .analysis-grid {
         grid-template-columns: 1fr;
-        transform: none !important;
-    }
-}
-
-/* Desktop: Show 3 cards, hide overflow */
-@media (min-width: 1024px) {
-    .analysis-carousel-wrapper {
-        overflow: hidden;
-        padding: 0 var(--space-16);
-    }
-
-    .analysis-grid {
-        grid-template-columns: repeat(5, calc(33.333% - var(--space-4)));
     }
 }
 
@@ -402,19 +608,13 @@ section,
     background: var(--brand-white);
     border: 2px solid var(--gray-200);
     border-radius: 50%;
-    display: none;
+    display: none !important;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 10;
     box-shadow: var(--shadow-md);
-}
-
-@media (min-width: 1024px) {
-    .carousel-nav {
-        display: flex;
-    }
 }
 
 .carousel-nav:hover {
@@ -448,16 +648,7 @@ section,
 
 /* Carousel Indicators */
 .carousel-indicators {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-2);
-    margin-top: var(--space-8);
-}
-
-@media (min-width: 1024px) {
-    .carousel-indicators {
-        display: none;
-    }
+    display: none !important;
 }
 
 .carousel-indicator {

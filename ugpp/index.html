@@ -260,83 +260,158 @@
                     <h2 class="section-title">¿Recibió una actuación de la UGPP?</h2>
                     <p class="section-description">Identifique su situación para entender la etapa del proceso en que se encuentra.</p>
                 </div>
-                <div class="situation-grid">
-                    <!-- Requerimiento -->
-                    <div class="situation-card">
-                        <div class="situation-card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                <polyline points="10 9 9 9 8 9"></polyline>
-                            </svg>
+
+                <!-- Slider de situaciones -->
+                <div class="situation-slider">
+                    <div class="situation-slider-wrapper">
+                        <div class="situation-slider-track">
+                            <!-- Slide 1: Requerimiento -->
+                            <div class="situation-slide">
+                                <div class="situation-slide-content">
+                                    <div class="situation-slide-number">1</div>
+                                    <div class="situation-slide-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                            <polyline points="14 2 14 8 20 8"></polyline>
+                                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                                        </svg>
+                                    </div>
+                                    <h3 class="situation-slide-title">Requerimiento</h3>
+                                    <p class="situation-slide-description">La UGPP solicitó información o documentos. Esta es la primera etapa del proceso de fiscalización donde debe responder en los plazos establecidos.</p>
+                                    <ul class="situation-slide-list">
+                                        <li>Plazo: generalmente 1 mes para responder</li>
+                                        <li>Análisis jurídico de la solicitud</li>
+                                        <li>Recopilación y organización de documentos</li>
+                                        <li>Respuesta estratégica fundamentada</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Liquidación Oficial -->
+                            <div class="situation-slide">
+                                <div class="situation-slide-content">
+                                    <div class="situation-slide-number">2</div>
+                                    <div class="situation-slide-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="9" y1="9" x2="15" y2="9"></line>
+                                            <line x1="9" y1="15" x2="15" y2="15"></line>
+                                        </svg>
+                                    </div>
+                                    <h3 class="situation-slide-title">Liquidación Oficial</h3>
+                                    <p class="situation-slide-description">La UGPP determinó diferencias u obligaciones de pago. Tiene derecho a presentar recurso de reconsideración.</p>
+                                    <ul class="situation-slide-list">
+                                        <li>Plazo: 1 mes para recurso de reconsideración</li>
+                                        <li>Análisis técnico de la liquidación</li>
+                                        <li>Verificación de cálculos y conceptos</li>
+                                        <li>Estructuración de defensas jurídicas</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Sanción -->
+                            <div class="situation-slide">
+                                <div class="situation-slide-content">
+                                    <div class="situation-slide-number">3</div>
+                                    <div class="situation-slide-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                        </svg>
+                                    </div>
+                                    <h3 class="situation-slide-title">Sanción</h3>
+                                    <p class="situation-slide-description">Existe una actuación sancionatoria por parte de la UGPP que debe ser contestada y defendida.</p>
+                                    <ul class="situation-slide-list">
+                                        <li>Análisis de la conducta sancionada</li>
+                                        <li>Verificación del debido proceso</li>
+                                        <li>Causales de exoneración o atenuación</li>
+                                        <li>Defensa administrativa o judicial</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4: Mandamiento de Pago -->
+                            <div class="situation-slide">
+                                <div class="situation-slide-content">
+                                    <div class="situation-slide-number">4</div>
+                                    <div class="situation-slide-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="situation-slide-title">Mandamiento de Pago</h3>
+                                    <p class="situation-slide-description">La obligación entró en etapa de cobro. Se pueden interponer excepciones dentro del proceso de cobro.</p>
+                                    <ul class="situation-slide-list">
+                                        <li>Plazo: 15 días para excepciones</li>
+                                        <li>Análisis de excepciones procedentes</li>
+                                        <li>Revisión de extinción de obligaciones</li>
+                                        <li>Acuerdos de pago si corresponde</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Slide 5: Embargo -->
+                            <div class="situation-slide">
+                                <div class="situation-slide-content">
+                                    <div class="situation-slide-number">5</div>
+                                    <div class="situation-slide-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="situation-slide-title">Embargo</h3>
+                                    <p class="situation-slide-description">Existen medidas cautelares sobre cuentas bancarias o bienes. Es urgente actuar para proteger el patrimonio.</p>
+                                    <ul class="situation-slide-list">
+                                        <li>Solicitud de levantamiento de embargo</li>
+                                        <li>Sustitución por póliza o garantía</li>
+                                        <li>Demostración de afectación económica</li>
+                                        <li>Acción inmediata para proteger operación</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Slide 6: Cobro Coactivo -->
+                            <div class="situation-slide">
+                                <div class="situation-slide-content">
+                                    <div class="situation-slide-number">6</div>
+                                    <div class="situation-slide-icon">
+                                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                        </svg>
+                                    </div>
+                                    <h3 class="situation-slide-title">Cobro Coactivo</h3>
+                                    <p class="situation-slide-description">La UGPP inició mecanismos de cobro coactivo. Requiere defensa inmediata y estratégica.</p>
+                                    <ul class="situation-slide-list">
+                                        <li>Excepciones al cobro coactivo</li>
+                                        <li>Revisión de ejecutoria del acto</li>
+                                        <li>Defensa contra remate de bienes</li>
+                                        <li>Alternativas de negociación</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <h3>REQUERIMIENTO</h3>
-                        <p>La UGPP solicitó información o documentos.</p>
                     </div>
 
-                    <!-- Liquidación Oficial -->
-                    <div class="situation-card">
-                        <div class="situation-card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="9" y1="9" x2="15" y2="9"></line>
-                                <line x1="9" y1="15" x2="15" y2="15"></line>
+                    <!-- Controles del slider -->
+                    <div class="situation-slider-controls">
+                        <button class="situation-slider-btn situation-slider-prev" aria-label="Anterior">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
                             </svg>
-                        </div>
-                        <h3>LIQUIDACIÓN OFICIAL</h3>
-                        <p>La entidad determinó diferencias u obligaciones.</p>
-                    </div>
-
-                    <!-- Sanción -->
-                    <div class="situation-card">
-                        <div class="situation-card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </button>
+                        <div class="situation-slider-dots"></div>
+                        <button class="situation-slider-btn situation-slider-next" aria-label="Siguiente">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
                             </svg>
-                        </div>
-                        <h3>SANCIÓN</h3>
-                        <p>Existe una actuación sancionatoria.</p>
-                    </div>
-
-                    <!-- Mandamiento de Pago -->
-                    <div class="situation-card">
-                        <div class="situation-card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                            </svg>
-                        </div>
-                        <h3>MANDAMIENTO DE PAGO</h3>
-                        <p>La obligación entró en etapa de cobro.</p>
-                    </div>
-
-                    <!-- Embargo -->
-                    <div class="situation-card">
-                        <div class="situation-card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                            </svg>
-                        </div>
-                        <h3>EMBARGO</h3>
-                        <p>Existen medidas cautelares sobre cuentas o bienes.</p>
-                    </div>
-
-                    <!-- Cobro Coactivo -->
-                    <div class="situation-card">
-                        <div class="situation-card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <line x1="12" y1="1" x2="12" y2="23"></line>
-                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                            </svg>
-                        </div>
-                        <h3>COBRO COACTIVO</h3>
-                        <p>La UGPP inició mecanismos de cobro.</p>
+                        </button>
                     </div>
                 </div>
+
                 <div class="text-center" style="margin-top: 3rem;">
                     <a href="../contacto/" class="btn btn-primary">Analizar mi caso</a>
                 </div>
@@ -1516,6 +1591,7 @@
     <script src="../assets/js/mobile-menu-new.js"></script>
     <script src="../assets/js/navigation.js"></script>
     <script src="../assets/js/analysis-carousel.js"></script>
+    <script src="../assets/js/situation-slider.js"></script>
     <script>
     // FAQ Toggle
     function toggleFaq(button) {
