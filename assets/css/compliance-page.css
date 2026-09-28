@@ -1,0 +1,399 @@
+/* ================================
+   COMPLIANCE PAGE STYLES
+   ================================ */
+
+/* Prevenir scroll horizontal en móvil */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+}
+
+body {
+    position: relative;
+}
+
+/* Hero Compliance */
+.compliance-hero {
+    background: linear-gradient(135deg, #8B0000 0%, #B3001B 100%);
+    padding: var(--space-20) 0 var(--space-16);
+    color: var(--brand-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.compliance-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.compliance-hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: var(--font-bold);
+    color: var(--brand-white);
+    margin-bottom: var(--space-6);
+    line-height: 1.1;
+}
+
+.compliance-hero-subtitle {
+    font-size: clamp(1.125rem, 2.5vw, 1.35rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: var(--space-4);
+    font-weight: var(--font-medium);
+}
+
+.compliance-hero-description {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: var(--space-8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.compliance-hero-cta {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ¿Cómo podemos ayudar? */
+.how-we-help {
+    padding: var(--space-20) 0;
+    background: var(--gray-50);
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+}
+
+.help-card {
+    background: var(--brand-white);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.help-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.help-card-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(179, 0, 27, 0.1);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+}
+
+.help-card-icon svg {
+    color: var(--brand-red);
+}
+
+.help-card h3 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-3);
+}
+
+.help-card p {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* Ciclo de Cumplimiento */
+.compliance-cycle {
+    padding: var(--space-20) 0;
+    background: var(--brand-white);
+}
+
+.cycle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-10);
+}
+
+.cycle-card {
+    background: var(--gray-50);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--gray-200);
+    transition: border-color 0.2s;
+}
+
+.cycle-card:hover {
+    border-color: var(--brand-red);
+}
+
+.cycle-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: var(--brand-red);
+    color: var(--brand-white);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-4);
+}
+
+.cycle-card h3 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-3);
+}
+
+.cycle-card p {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* Soluciones de Cumplimiento */
+.compliance-solutions {
+    padding: var(--space-20) 0;
+    background: var(--gray-50);
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-10);
+}
+
+.solution-card {
+    background: var(--brand-white);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.solution-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(179, 0, 27, 0.1);
+    color: var(--brand-red);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+}
+
+.solution-card h3 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-3);
+}
+
+.solution-description {
+    font-size: var(--text-base);
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+}
+
+.solution-target {
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    background: var(--gray-100);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-6);
+    flex-grow: 1;
+}
+
+.solution-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--brand-red);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    transition: gap 0.2s;
+}
+
+.solution-cta:hover {
+    gap: var(--space-3);
+}
+
+/* Preguntas Frecuentes */
+.faq-section {
+    padding: var(--space-20) 0;
+    background: var(--brand-white);
+}
+
+.faq-accordion {
+    max-width: 800px;
+    margin: var(--space-10) auto 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: var(--space-5) 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    text-align: left;
+    cursor: pointer;
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    transition: color 0.2s;
+}
+
+.faq-question:hover {
+    color: var(--brand-red);
+}
+
+.faq-question[aria-expanded="true"] {
+    color: var(--brand-red);
+}
+
+.faq-icon {
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 0 var(--space-5) 0;
+    color: var(--gray-600);
+    line-height: 1.7;
+    font-size: var(--text-base);
+}
+
+.faq-answer[hidden] {
+    display: none;
+}
+
+/* Situaciones de Contacto */
+.contact-situations {
+    padding: var(--space-20) 0;
+    background: var(--gray-50);
+}
+
+.situations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+}
+
+.situation-card {
+    background: var(--brand-white);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.situation-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(179, 0, 27, 0.1);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+}
+
+.situation-icon svg {
+    color: var(--brand-red);
+}
+
+.situation-card h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-3);
+    line-height: 1.4;
+}
+
+.situation-card p {
+    font-size: var(--text-base);
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+/* CTA Final */
+.final-cta-compliance {
+    background: linear-gradient(135deg, #8B0000 0%, #B3001B 100%);
+    padding: var(--space-20) 0;
+    color: var(--brand-white);
+    text-align: center;
+}
+
+.final-cta-compliance .final-cta-content h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: var(--font-bold);
+    color: var(--brand-white);
+    margin-bottom: var(--space-4);
+    line-height: 1.2;
+}
+
+.final-cta-compliance .final-cta-content p {
+    font-size: var(--text-lg);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.final-cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .help-grid,
+    .cycle-grid,
+    .solutions-grid,
+    .situations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .compliance-hero-cta,
+    .final-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

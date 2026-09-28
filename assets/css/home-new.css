@@ -340,6 +340,10 @@
     background-image: url('../images/servicio-asesoria-legal.webp');
 }
 
+.showcase-card-compliance .showcase-card-bg {
+    background: linear-gradient(135deg, #8B0000 0%, #B3001B 100%);
+}
+
 .showcase-card-overlay {
     position: absolute;
     top: 0;
