@@ -1068,6 +1068,7 @@ main .container {
     background-color: var(--gray-50);
     padding: var(--space-4) 0;
     border-bottom: 1px solid var(--gray-200);
+    margin: 0;
 }
 
 .breadcrumbs-list {
@@ -1121,7 +1122,7 @@ main .container {
 }
 
 /* Responsive Mobile */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .ugpp-hero {
         padding: var(--space-12) 0 var(--space-10);
         background-position: center center;

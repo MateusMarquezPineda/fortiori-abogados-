@@ -13,6 +13,53 @@ body {
     position: relative;
 }
 
+/* Breadcrumbs */
+.breadcrumbs {
+    background-color: var(--gray-50);
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--gray-200);
+    margin: 0;
+}
+
+.breadcrumbs-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumbs-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.breadcrumbs-item a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs-item a:hover {
+    color: var(--brand-red);
+}
+
+.breadcrumbs-item:not(:last-child):after {
+    content: "›";
+    color: var(--gray-400);
+    margin-left: var(--space-2);
+}
+
+.breadcrumbs-item:last-child {
+    color: var(--brand-black);
+    font-weight: var(--font-medium);
+}
+
 /* Hero Compliance */
 .compliance-hero {
     background: linear-gradient(135deg, #8B0000 0%, #B3001B 100%);
@@ -61,110 +108,346 @@ body {
     flex-wrap: wrap;
 }
 
-/* ¿Cómo podemos ayudar? */
+/* ¿Cómo podemos ayudar? - Diseño Moderno */
 .how-we-help {
     padding: var(--space-20) 0;
-    background: var(--gray-50);
+    background: linear-gradient(180deg, var(--gray-50) 0%, var(--brand-white) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.how-we-help::before {
+    content: '';
+    position: absolute;
+    top: -300px;
+    left: -300px;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(179, 0, 27, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .help-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-6);
-    margin-top: var(--space-10);
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+    perspective: 1000px;
 }
 
 .help-card {
     background: var(--brand-white);
-    padding: var(--space-8);
-    border-radius: var(--radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s, box-shadow 0.2s;
+    padding: var(--space-10);
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--gray-200);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transform-style: preserve-3d;
 }
 
+/* Escalonado */
+.help-card:nth-child(1) {
+    transform: translateY(-20px);
+}
+
+.help-card:nth-child(3) {
+    transform: translateY(-20px);
+}
+
+.help-card:nth-child(2),
+.help-card:nth-child(4) {
+    transform: translateY(20px);
+}
+
+/* Número decorativo gigante */
+.help-card::before {
+    content: attr(data-number);
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    font-size: 180px;
+    font-weight: var(--font-black);
+    color: var(--gray-100);
+    line-height: 1;
+    z-index: 0;
+    opacity: 0.5;
+    transition: all 0.5s ease;
+}
+
+.help-card:hover::before {
+    opacity: 1;
+    color: rgba(179, 0, 27, 0.08);
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Overlay gradiente */
+.help-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(179, 0, 27, 0.03) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+}
+
+.help-card:hover::after {
+    opacity: 1;
+}
+
+/* Efecto 3D Hover */
 .help-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-12px) rotateX(2deg) rotateY(2deg) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(179, 0, 27, 0.25),
+                0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: var(--brand-red);
 }
 
 .help-card-icon {
-    width: 56px;
-    height: 56px;
-    background: rgba(179, 0, 27, 0.1);
-    border-radius: var(--radius-lg);
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, rgba(179, 0, 27, 0.1) 0%, rgba(139, 0, 0, 0.05) 100%);
+    border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-5);
+    position: relative;
+    z-index: 1;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Gradiente rotatorio en ícono */
+.help-card-icon::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, var(--brand-red), #8B0000, var(--brand-red));
+    border-radius: var(--radius-xl);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.help-card:hover .help-card-icon::before {
+    opacity: 0.3;
+    animation-play-state: running;
+}
+
+.help-card:hover .help-card-icon {
+    background: linear-gradient(135deg, var(--brand-red) 0%, #8B0000 100%);
+    transform: scale(1.15) rotate(-5deg);
+    box-shadow: 0 8px 20px rgba(179, 0, 27, 0.4);
 }
 
 .help-card-icon svg {
     color: var(--brand-red);
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.help-card:hover .help-card-icon svg {
+    color: var(--brand-white);
+    transform: scale(1.1);
 }
 
 .help-card h3 {
-    font-size: var(--text-xl);
-    font-weight: var(--font-semibold);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
     color: var(--gray-900);
     margin-bottom: var(--space-3);
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.help-card:hover h3 {
+    color: var(--brand-red);
 }
 
 .help-card p {
     font-size: var(--text-base);
     color: var(--gray-600);
-    line-height: 1.6;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
 }
 
 /* Ciclo de Cumplimiento */
 .compliance-cycle {
     padding: var(--space-20) 0;
     background: var(--brand-white);
+    position: relative;
 }
 
-.cycle-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--space-8);
+/* Línea divisora superior decorativa */
+.compliance-cycle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
+    height: 4px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--brand-red) 20%,
+        var(--brand-red) 80%,
+        transparent 100%);
+    border-radius: var(--radius-full);
+}
+
+/* Slider Wrapper */
+.cycle-slider-wrapper {
     margin-top: var(--space-10);
+    overflow: hidden;
+    position: relative;
 }
 
+/* Gradientes laterales fade */
+.cycle-slider-wrapper::before,
+.cycle-slider-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.cycle-slider-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--brand-white), transparent);
+}
+
+.cycle-slider-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--brand-white), transparent);
+}
+
+/* Slider con animación */
+.cycle-slider {
+    display: flex;
+    gap: var(--space-6);
+    animation: slideCycle 50s linear infinite;
+    width: fit-content;
+}
+
+.cycle-slider:hover {
+    animation-play-state: paused;
+}
+
+@keyframes slideCycle {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Cards del ciclo */
 .cycle-card {
-    background: var(--gray-50);
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--brand-white) 100%);
     padding: var(--space-8);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     border: 2px solid var(--gray-200);
-    transition: border-color 0.2s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 340px;
+    max-width: 340px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Efecto decorativo de fondo */
+.cycle-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(179, 0, 27, 0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.cycle-card:hover::before {
+    opacity: 1;
 }
 
 .cycle-card:hover {
     border-color: var(--brand-red);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(179, 0, 27, 0.15),
+                0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .cycle-number {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
-    background: var(--brand-red);
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--brand-red) 0%, #8B0000 100%);
     color: var(--brand-white);
     font-size: var(--text-2xl);
     font-weight: var(--font-bold);
     border-radius: var(--radius-full);
     margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 12px rgba(179, 0, 27, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cycle-card:hover .cycle-number {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 16px rgba(179, 0, 27, 0.4);
 }
 
 .cycle-card h3 {
     font-size: var(--text-xl);
-    font-weight: var(--font-semibold);
+    font-weight: var(--font-bold);
     color: var(--gray-900);
     margin-bottom: var(--space-3);
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.cycle-card:hover h3 {
+    color: var(--brand-red);
 }
 
 .cycle-card p {
     font-size: var(--text-base);
     color: var(--gray-600);
-    line-height: 1.6;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
 }
 
 /* Soluciones de Cumplimiento */
@@ -234,11 +517,26 @@ body {
     color: var(--brand-red);
     font-weight: var(--font-medium);
     text-decoration: none;
-    transition: gap 0.2s;
+    transition: all 0.3s ease;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    background: rgba(179, 0, 27, 0.05);
+}
+
+.solution-cta svg {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
 }
 
 .solution-cta:hover {
     gap: var(--space-3);
+    background: var(--brand-red);
+    color: var(--brand-white);
+    transform: translateX(4px);
+}
+
+.solution-cta:hover svg {
+    transform: scale(1.1);
 }
 
 /* Preguntas Frecuentes */
@@ -295,84 +593,251 @@ body {
     color: var(--gray-600);
     line-height: 1.7;
     font-size: var(--text-base);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.faq-question[aria-expanded="true"] + .faq-answer {
+    max-height: 500px;
+    opacity: 1;
+    padding-top: var(--space-4);
 }
 
 .faq-answer[hidden] {
     display: none;
 }
 
-/* Situaciones de Contacto */
+/* Situaciones de Contacto - Checklist Interactivo */
 .contact-situations {
     padding: var(--space-20) 0;
-    background: var(--gray-50);
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
 }
 
-.situations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-6);
-    margin-top: var(--space-10);
+.contact-situations::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(179, 0, 27, 0.04) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
-.situation-card {
+.contact-situations .section-description {
+    text-align: center;
+    color: var(--gray-600);
+    font-size: var(--text-lg);
+    margin-top: var(--space-3);
+}
+
+.situations-checklist {
+    max-width: 900px;
+    margin: var(--space-12) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.checklist-item {
     background: var(--brand-white);
+    border-radius: var(--radius-xl);
     padding: var(--space-6);
-    border-radius: var(--radius-lg);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    animation: slideInUp 0.6s ease-out backwards;
 }
 
-.situation-icon {
+/* Animación escalonada */
+.checklist-item[data-index="1"] { animation-delay: 0.1s; }
+.checklist-item[data-index="2"] { animation-delay: 0.2s; }
+.checklist-item[data-index="3"] { animation-delay: 0.3s; }
+.checklist-item[data-index="4"] { animation-delay: 0.4s; }
+.checklist-item[data-index="5"] { animation-delay: 0.5s; }
+.checklist-item[data-index="6"] { animation-delay: 0.6s; }
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto glow de fondo */
+.checklist-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(179, 0, 27, 0.05) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+}
+
+.checklist-item:hover::before {
+    opacity: 1;
+}
+
+.checklist-item:hover {
+    border-color: var(--brand-red);
+    transform: translateX(8px);
+    box-shadow: 0 8px 24px rgba(179, 0, 27, 0.15),
+                0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Checkbox con checkmark */
+.checklist-checkbox {
     width: 48px;
     height: 48px;
-    background: rgba(179, 0, 27, 0.1);
+    min-width: 48px;
+    background: linear-gradient(135deg, rgba(179, 0, 27, 0.1) 0%, rgba(139, 0, 0, 0.05) 100%);
+    border: 3px solid var(--gray-300);
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-4);
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.situation-icon svg {
+.checklist-checkbox svg {
+    color: var(--brand-white);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.checklist-item:hover .checklist-checkbox {
+    background: linear-gradient(135deg, var(--brand-red) 0%, #8B0000 100%);
+    border-color: var(--brand-red);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 12px rgba(179, 0, 27, 0.3);
+}
+
+.checklist-item:hover .checklist-checkbox svg {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Contenido del checklist */
+.checklist-content {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.checklist-content h3 {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-2);
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.checklist-item:hover .checklist-content h3 {
     color: var(--brand-red);
 }
 
-.situation-card h3 {
-    font-size: var(--text-lg);
-    font-weight: var(--font-semibold);
-    color: var(--gray-900);
-    margin-bottom: var(--space-3);
-    line-height: 1.4;
-}
-
-.situation-card p {
+.checklist-content p {
     font-size: var(--text-base);
     color: var(--gray-600);
     line-height: 1.6;
+    margin: 0;
+}
+
+/* CTA de situaciones */
+.situations-cta {
+    text-align: center;
+    margin-top: var(--space-12);
+    animation: fadeIn 0.8s ease-out 0.8s backwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* CTA Final */
-.final-cta-compliance {
-    background: linear-gradient(135deg, #8B0000 0%, #B3001B 100%);
+.final-cta {
     padding: var(--space-20) 0;
+    background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%),
+        url('../images/fondo-3.webp') center center / cover no-repeat;
     color: var(--brand-white);
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.final-cta-compliance .final-cta-content h2 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: var(--font-bold);
-    color: var(--brand-white);
+.final-cta::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.final-cta::after {
+    content: "";
+    position: absolute;
+    bottom: -30%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.final-cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.final-cta h2 {
+    font-size: var(--text-5xl);
+    font-weight: var(--font-black);
     margin-bottom: var(--space-4);
-    line-height: 1.2;
+    line-height: var(--leading-tight);
+    color: var(--brand-red);
 }
 
-.final-cta-compliance .final-cta-content p {
-    font-size: var(--text-lg);
-    color: rgba(255, 255, 255, 0.9);
+.final-cta p {
+    font-size: var(--text-xl);
     margin-bottom: var(--space-8);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: var(--leading-relaxed);
 }
 
 .final-cta-buttons {
@@ -383,17 +848,173 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .help-grid,
-    .cycle-grid,
-    .solutions-grid,
-    .situations-grid {
-        grid-template-columns: 1fr;
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .help-grid {
+        gap: var(--space-6);
     }
 
-    .compliance-hero-cta,
-    .final-cta-buttons {
+    /* Mantener 2 columnas pero sin escalonado */
+    .help-card:nth-child(1),
+    .help-card:nth-child(2),
+    .help-card:nth-child(3),
+    .help-card:nth-child(4) {
+        transform: translateY(0);
+    }
+
+    .help-card {
+        padding: var(--space-8);
+    }
+
+    .help-card::before {
+        font-size: 140px;
+        top: -30px;
+        right: -15px;
+    }
+
+    .help-card-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .help-card h3 {
+        font-size: var(--text-xl);
+    }
+}
+
+/* Mobile (<768px) */
+@media (max-width: 768px) {
+    .help-grid,
+    .solutions-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    /* Ajustes del slider en móvil */
+    .cycle-slider {
+        animation-duration: 70s;
+    }
+
+    .cycle-card {
+        min-width: 300px;
+        max-width: 300px;
+        padding: var(--space-6);
+    }
+
+    .cycle-number {
+        width: 56px;
+        height: 56px;
+    }
+
+    .cycle-slider-wrapper::before,
+    .cycle-slider-wrapper::after {
+        width: 80px;
+    }
+
+    /* Checklist items en móvil */
+    .checklist-item {
+        flex-direction: column;
+        gap: var(--space-4);
+        padding: var(--space-5);
+    }
+
+    .checklist-item:hover {
+        transform: translateX(0) translateY(-4px);
+    }
+
+    .checklist-checkbox {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+
+    .checklist-content h3 {
+        font-size: var(--text-lg);
+    }
+
+    .checklist-content p {
+        font-size: var(--text-sm);
+    }
+
+    .contact-situations::before {
+        width: 400px;
+        height: 400px;
+    }
+
+    /* Remover efectos de escalonado en móvil */
+    .help-card:nth-child(1),
+    .help-card:nth-child(2),
+    .help-card:nth-child(3),
+    .help-card:nth-child(4) {
+        transform: translateY(0);
+    }
+
+    .help-card {
+        padding: var(--space-6);
+    }
+
+    /* Número decorativo más pequeño en móvil */
+    .help-card::before {
+        font-size: 100px;
+        top: -20px;
+        right: -10px;
+    }
+
+    .help-card-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .help-card h3 {
+        font-size: var(--text-lg);
+    }
+
+    .help-card p {
+        font-size: var(--text-sm);
+    }
+
+    /* Simplificar hover en móvil */
+    .help-card:hover {
+        transform: translateY(-8px) scale(1.01);
+        box-shadow: 0 15px 30px -8px rgba(179, 0, 27, 0.2),
+                    0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .help-card:hover .help-card-icon {
+        transform: scale(1.1) rotate(-3deg);
+    }
+
+    .compliance-hero-cta {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .final-cta {
+        padding: var(--space-12) 0;
+    }
+
+    .final-cta h2 {
+        font-size: var(--text-3xl);
+    }
+
+    .final-cta p {
+        font-size: var(--text-lg);
+    }
+
+    .final-cta-buttons {
+        flex-direction: column;
+    }
+
+    .final-cta-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .how-we-help::before {
+        width: 500px;
+        height: 500px;
+        top: -200px;
+        left: -200px;
     }
 }
