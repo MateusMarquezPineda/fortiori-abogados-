@@ -915,16 +915,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all var(--transition-base);
-    z-index: var(--z-toast);
+    z-index: 1000;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .whatsapp-float:hover {
     background-color: #1FB855;
     transform: scale(1.1);
-    box-shadow: var(--shadow-xl);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+.whatsapp-float:active {
+    transform: scale(0.95);
+}
+
+/* Ocultar en página de blog */
+.page-blog .whatsapp-float {
+    display: none;
 }
 
 .whatsapp-badge {
@@ -1113,22 +1123,126 @@
 
 /* Mobile adjustments */
 @media (max-width: 767px) {
+    .quick-chat {
+        bottom: 20px;
+        left: 16px;
+    }
+
     .quick-chat-trigger-text {
         display: none;
     }
 
     .quick-chat-trigger {
-        width: 52px;
-        height: 52px;
+        width: 56px;
+        height: 56px;
         padding: 0;
         justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .quick-chat-trigger svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .quick-chat-trigger:active {
+        transform: scale(0.95);
     }
 
     .quick-chat-panel {
-        width: calc(100vw - var(--space-8));
+        width: calc(100vw - 32px);
+        left: 16px;
+        right: 16px;
+        bottom: 85px;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+    }
+
+    /* Asegurar que no interfiera con menú móvil */
+    body.mobile-menu-open .quick-chat {
+        display: none;
+    }
+
+    /* Mejorar opciones de chat en móvil */
+    .quick-chat-option {
+        padding: 14px;
+        min-height: 60px;
+    }
+
+    .quick-chat-option:active {
+        background-color: rgba(179, 0, 27, 0.05);
+        border-color: var(--brand-red);
+    }
+
+    .quick-chat-option strong {
+        font-size: 14px;
+    }
+
+    .quick-chat-option span {
+        font-size: 12px;
+    }
+
+    .quick-chat-body {
+        padding: 16px;
+    }
+
+    .quick-chat-header {
+        padding: 16px;
+    }
+
+    .quick-chat-title {
+        font-size: 16px;
     }
 
     .whatsapp-float {
-        bottom: var(--space-20);
+        bottom: 20px;
+        right: 16px;
+        width: 56px;
+        height: 56px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+        /* Mejorar área de toque en móvil */
+        min-width: 56px;
+        min-height: 56px;
+        /* Añadir animación sutil para llamar la atención */
+        animation: whatsapp-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes whatsapp-pulse {
+        0%, 100% {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+        50% {
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4), 0 2px 6px rgba(37, 211, 102, 0.25);
+        }
+    }
+
+    .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .whatsapp-badge {
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
+        top: 0;
+        right: 0;
+    }
+
+    /* Asegurar que no interfiera con menú móvil */
+    body.mobile-menu-open .whatsapp-float {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0);
+    }
+
+    /* Asegurar que sea fácil de presionar en móvil */
+    .whatsapp-float::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
     }
 }

@@ -892,14 +892,35 @@ body {
     }
 
     /* Ajustes del slider en móvil */
+    .cycle-slider-wrapper {
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        cursor: grab;
+        /* Ocultar scrollbar pero mantener funcionalidad */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .cycle-slider-wrapper::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    .cycle-slider-wrapper:active {
+        cursor: grabbing;
+    }
+
     .cycle-slider {
-        animation-duration: 70s;
+        animation: none; /* Pausar animación en móvil para control manual */
     }
 
     .cycle-card {
         min-width: 300px;
         max-width: 300px;
         padding: var(--space-6);
+        scroll-snap-align: center;
     }
 
     .cycle-number {
@@ -909,7 +930,7 @@ body {
 
     .cycle-slider-wrapper::before,
     .cycle-slider-wrapper::after {
-        width: 80px;
+        width: 60px;
     }
 
     /* Checklist items en móvil */
